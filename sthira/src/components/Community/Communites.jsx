@@ -1,49 +1,60 @@
 import React from 'react';
-import { MdOutlinePregnantWoman } from "react-icons/md";
-import { HiBuildingOffice } from "react-icons/hi2";
-import { PiStudentDuotone } from "react-icons/pi";
-import { IoPeopleCircle } from "react-icons/io5";
+import wps from '../Community/wps.jpg'
+import spw from '../Community/spw.jpg'
+import sus from '../Community/sus.jpg'
+import sp from '../Community/sp.jpg'
 
-const categories = [
-  { id: 1, name: 'Students', icon: <PiStudentDuotone />, bgColor: 'bg-violet-200' },
-  { id: 2, name: 'Working Professionals', icon: <HiBuildingOffice />
-    , bgColor: 'bg-violet-200' },
-  { id: 3, name: 'Postpartum Depression',  icon: <MdOutlinePregnantWoman />
-    , bgColor: 'bg-violet-200' },
-  { id: 4, name: 'Midlife adults',  icon: <IoPeopleCircle />, bgColor: 'bg-violet-200' },
-];
+const ProductCard = ({ name, image }) => (
 
-const CategoryCard = ({ category }) => {
-  const handleClick = () => {
-    alert(`Clicked on ${category.name}`);
-  };
-
-  return (
-    <div
-      className={`rounded-lg p-4 ${category.bgColor} text-white flex flex-col items-center justify-center cursor-pointer hover:bg-hover`}
-      onClick={handleClick}
-    >
-      <div className="text-4xl mb-2 ">{category.icon}</div>
-      <h2 className="text-xl font-bold">{category.name}</h2>
+  <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 p-10 bg-orange-50">
+    <img className="w-full h-20" src={image} alt={name} />
+    <div className="px-6 py-4">
+      <div className="font-bold text-xl mb-2">{name}</div>
+      <p className='text-lightText'>251 Chats | Serious</p>
       
     </div>
-  );
-};
+    
+    <div className="px-6 pt-4 pb-2">
+      <button className="bg-brightColor2 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded">
+        View Chat
+      </button>
+    </div>
+  </div>
+);
 
-const Community = () => {
+const ProductList = () => {
+  const products = [
+    { name: 'Working Professionals',  image:wps},
+    { name: 'Postmortum Women',  image: spw },
+    { name: 'University Students',  image: sus },
+    { name: 'General Help',  image: sp },
+    
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <header className="flex justify-between items-center bg-white p-20 shadow-md">
-        <h1 className="text-2xl font-bold text-lightText">All Category</h1>
-        <button className="text-2xl text-lightText">Sort</button>
-      </header>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-        {categories.map((category) => (
-          <CategoryCard key={category.id} category={category} />
-        ))}
+    <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+      <h2 className="text-4xl text-gray-500 font-bold mb-2 pt-20">100+ People have benefitted</h2>
+
+      <p className="text-sm text-gray-600 mb-4 bold">24 x 7 Assistance | 100% Chat Privacy | Ememrgency Help Available</p>
+    
+
+    <div className="flex flex-wrap justify-centre p-3">
+      
+    
+      {products.map((product, index) => (
+        <ProductCard key={index} {...product} />
+        
+      ))}
+
+<div className="bg-white p-10 rounded-lg shadow-lg text-center hover:bg-brightColor2  w-full">
+      <h2 className="text-3xl text-gray-500 font-bold align-middle hover:text-white">My Conversations</h2>
+
+
+      </div>
+
       </div>
     </div>
   );
 };
 
-export default Community;
+export default ProductList;
