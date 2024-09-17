@@ -222,7 +222,7 @@ const handleAnswerChange = (questionId, value) => {
 };
 
 return (
-  <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+  <div className="min-h-screen bg-gray-100 flex items-center justify-center pt-20">
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-4xl w-full">
       <h2 className="text-3xl font-bold text-center mb-8">Beck's Depression Inventory</h2>
 

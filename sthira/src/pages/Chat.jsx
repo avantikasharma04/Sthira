@@ -1,18 +1,17 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Communities from '../components/Community/Communites'
-import MyChat from '../components/Community/MyChat'
-import Chatbot from '../components/Chatbot/Chatbot'
+import Footer from '../components/Home/Footer/Footer'
 
 
-const Community = () => {
+const Chat = () => {
   return (
     <>
       <Navbar/>
       <Communities/>
-      <Chatbot/>
+     <Footer/>
     </>
   )
 }
 
-export default Community
+export default Chat

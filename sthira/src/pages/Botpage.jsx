@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Anxiety from '../components/Home/'
+import Chatbot from '../components/Chatbot/Chatbot'
 
-const Anx = () => {
+const Botpage = () => {
   return (
     <div>
       <Navbar/>
-      <Anxiety/>
+      <Chatbot/>
     </div>
   )
 }
 
-export default Anx
+export default Botpage

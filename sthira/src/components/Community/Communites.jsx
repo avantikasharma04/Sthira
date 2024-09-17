@@ -16,7 +16,7 @@ const ProductCard = ({ name, image }) => (
     
     <div className="px-6 pt-4 pb-2">
       <button className="bg-brightColor2 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded">
-        View Chat
+      <a href="/Botpage">Learn More </a>
       </button>
     </div>
   </div>
