@@ -1,15 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Body from '../components/Forms/BodyImage'
+import Reg from '../components/Regcomp/Reg'
 import Footer from '../components/Home/Footer/Footer'
-const Image = () => {
+
+const Register = () => {
   return (
     <div>
-      <Navbar/>
-      <Body/>
-      <Footer/>
+      <Reg/>
     </div>
   )
 }
 
-export default Image
+export default Register

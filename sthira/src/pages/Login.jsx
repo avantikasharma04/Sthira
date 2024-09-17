@@ -1,15 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Body from '../components/Forms/BodyImage'
 import Footer from '../components/Home/Footer/Footer'
-const Image = () => {
+import Log from '../components/LoginComp/Log'
+
+const Login = () => {
   return (
     <div>
-      <Navbar/>
-      <Body/>
-      <Footer/>
+      <Log/>
     </div>
   )
 }
 
-export default Image
+export default Login

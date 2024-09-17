@@ -10,13 +10,15 @@ import BecksDep from './pages/BecksDep'
 import Botpage from './pages/Botpage'
 import Eating from './pages/Eating'
 import Sleepp from './pages/Sleepp'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/Home' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/chat' element={<Chat/>}/>
           <Route path='/account' element={<Account/>}/>
@@ -26,6 +28,8 @@ const App = () => {
           <Route path='/Botpage' element={<Botpage/>}/>
           <Route path='/Eating' element={<Eating/>}/>
           <Route path='/Sleepp' element={<Sleepp/>}/>
+          <Route path='/Login' element={<Login/>}/>
+          <Route path='/Register' element={<Register/>}/>
           </Routes>
       </BrowserRouter>
     </div>
