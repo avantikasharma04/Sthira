@@ -17,10 +17,10 @@ const Navbar = () => {
             <nav className='container flex justify-between items-center'>
                 <div className='flex items-center gap-2'>
                     <RiMentalHealthFill size={40} className='text-backgroundColor2' />
-                    <Link to="/" className='font-bold text-2xl'>Sthira</Link>
+                    <Link to="/Home" className='font-bold text-2xl'>Sthira</Link>
                 </div>
                 <div className='hidden md:flex items-center gap-8 font-medium text-xl'>
-                    <Link to="/" className='hover:text-white transition duration-200 ease-linear'>Home</Link >
+                    <Link to="/Home" className='hover:text-white transition duration-200 ease-linear'>Home</Link >
                     <Link to="/about" className='hover:text-white transition duration-200 ease-linear'>About Us</Link>
                     <Link to="/chat" className='hover:text-white transition duration-200 ease-linear'>Chat</Link>
                     <Link to="/account" className='hover:text-white transition duration-200 ease-linear'>Account</Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
             </nav>
             {/*responsive*/}
             <div className={`${menu ? "translate-x-0" : "-translate-x-full"} md:hidden flex flex-col absolute bg-backgroundColor text-white left-0 top-16 font-semibold text-2xl text-center pt-8 pb-4 gap-8 w-3/4 h-fit rounded-br-xl transition-transform duration-300`}>
-                <Link to="/" className='hover:text-white transition duration-200 ease-linear'>Home</Link>
+                <Link to="/Home" className='hover:text-white transition duration-200 ease-linear'>Home</Link>
                 <Link to="/about" className='hover:text-white transition duration-200 ease-linear'>About Us</Link>
                 <Link to="/chat" className='hover:text-white transition duration-200 ease-linear'>Chat</Link>
                 <Link to="/account" className='hover:text-white transition duration-200 ease-linear'>Account</Link>

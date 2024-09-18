@@ -3,11 +3,12 @@ import wps from '../Community/wps.jpg'
 import spw from '../Community/spw.jpg'
 import sus from '../Community/sus.jpg'
 import sp from '../Community/sp.jpg'
+import preg from '../Community/preg.png'
 
 const ProductCard = ({ name, image }) => (
 
-  <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 p-10 bg-orange-50">
-    <img className="w-full h-20" src={image} alt={name} />
+  <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 p-10 bg-orange-50 m-12">
+    <img className="w-full " src={image} alt={name} />
     <div className="px-6 py-4">
       <div className="font-bold text-xl mb-2">{name}</div>
       <p className='text-lightText'>251 Chats | Serious</p>
@@ -25,7 +26,7 @@ const ProductCard = ({ name, image }) => (
 const ProductList = () => {
   const products = [
     { name: 'Working Professionals',  image:wps},
-    { name: 'Postmortum Women',  image: spw },
+    { name: 'Postmortum Women',  image: preg },
     { name: 'University Students',  image: sus },
     { name: 'General Help',  image: sp },
     
@@ -46,8 +47,8 @@ const ProductList = () => {
         
       ))}
 
-<div className="bg-white p-10 rounded-lg shadow-lg text-center hover:bg-brightColor2  w-full">
-      <h2 className="text-3xl text-gray-500 font-bold align-middle hover:text-white">My Conversations</h2>
+<div className="bg-brightColor2 p-10 rounded-lg shadow-lg text-center   w-full">
+      <h2 className="text-3xl text-white font-bold align-middle ">My Conversations</h2>
 
 
       </div>
