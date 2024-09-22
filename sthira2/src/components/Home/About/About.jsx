@@ -3,7 +3,7 @@ import therapy from '../About/therapy.png';
 
 const About = () => {
   return (
-    <section className="flex justify-center items-center py-10 bg-white">
+    <section className="flex justify-center items-center py-10 bg-backgroundColor">
       <div className="flex flex-col md:flex-row items-center max-w-6xl w-full px-4 md:px-0">
         <div className="text-center md:text-left md:mr-8 mb-8 md:mb-0">
           <h2 className="text-lg font-semibold mb-2">Therapy Help</h2>

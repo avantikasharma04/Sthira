@@ -14,9 +14,9 @@ const Disorders = () => {
         <section className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 border-2 rounded-lg border-purple-300 shadow-lg bg-backgroundColor hover:shadow-2xl transition-shadow duration-300">
           <img src={bipolar} alt="Bipolar" className='rounded-xl w-full h-64 object-cover' />
           <div className="text-center mt-4">
-            <h1 className='text-xl p-2 text-lightText font-semibold'>Bipolar</h1>
+            <h1 className='text-xl p-2 text-lightText font-semibold'>Beck's Anxiety</h1>
             <button className='py-1 px-4 mt-2 border-2 border-backgroundColor2 rounded-md text-lightText hover:bg-backgroundColor2 transition-colors duration-300 hover:text-white'>
-            <Link to="/Anxiety">Learn More </Link>
+            <Link to="/Anx">Learn More </Link>
             </button>
            </div>
         </section>
@@ -25,9 +25,9 @@ const Disorders = () => {
         <section className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 border-2 rounded-lg border-purple-300 shadow-lg bg-backgroundColor hover:shadow-2xl transition-shadow duration-300">
           <img src={bipolar} alt="Bipolar" className='rounded-xl w-full h-64 object-cover' />
           <div className="text-center mt-4">
-            <h1 className='text-xl p-2 text-lightText font-semibold'>Bipolar</h1>
+            <h1 className='text-xl p-2 text-lightText font-semibold'>Becks Depression</h1>
             <button className='hover:text-white py-1 px-4 mt-2 border-2 border-backgroundColor2 rounded-md text-lightText hover:bg-backgroundColor2 transition-colors duration-300'>
-              Learn More
+              <a href="/BecksDep">Learn More</a>
             </button>
           </div>
         </section>
@@ -36,9 +36,9 @@ const Disorders = () => {
          <section className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 border-2 rounded-lg border-purple-300 shadow-lg bg-backgroundColor hover:shadow-2xl transition-shadow duration-300">
           <img src={bipolar} alt="Bipolar" className='rounded-xl w-full h-64 object-cover' />
           <div className="text-center mt-4">
-            <h1 className='text-xl p-2 text-lightText font-semibold'>Bipolar</h1>
+            <h1 className='text-xl p-2 text-lightText font-semibold'>Eating Disorder</h1>
             <button className='hover:text-white py-1 px-4 mt-2 border-2 border-backgroundColor2 rounded-md text-lightText hover:bg-backgroundColor2 transition-colors duration-300'>
-              Learn More
+              <a href="/Eating">Learn More</a>
             </button>
           </div>
         </section>
@@ -47,9 +47,9 @@ const Disorders = () => {
          <section className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 border-2 rounded-lg border-purple-300 shadow-lg bg-backgroundColor hover:shadow-2xl transition-shadow duration-300">
           <img src={bipolar} alt="Bipolar" className='rounded-xl w-full h-64 object-cover' />
           <div className="text-center mt-4">
-            <h1 className='text-xl p-2 text-lightText font-semibold'>Bipolar</h1>
+            <h1 className='text-xl p-2 text-lightText font-semibold'>Sleep Disorder</h1>
             <button className='hover:text-white py-1 px-4 mt-2 border-2 border-backgroundColor2 rounded-md text-lightText hover:bg-backgroundColor2 transition-colors duration-300'>
-             Learn More
+             <a href="/SleepPage">Learn More</a>
             </button>
           </div>
         </section>
@@ -58,9 +58,9 @@ const Disorders = () => {
         <section className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 border-2 rounded-lg border-purple-300 shadow-lg bg-backgroundColor hover:shadow-2xl transition-shadow duration-300">
           <img src={bipolar} alt="Bipolar" className='rounded-xl w-full h-64 object-cover' />
           <div className="text-center mt-4">
-            <h1 className='text-xl p-2 text-lightText font-semibold'>Bipolar</h1>
+            <h1 className='text-xl p-2 text-lightText font-semibold'>Body Image Satisfaction</h1>
             <button className='hover:text-white py-1 px-4 mt-2 border-2 border-backgroundColor2 rounded-md text-lightText hover:bg-backgroundColor2 transition-colors duration-300'>
-              Learn More
+              <a href="/ImagePage">Learn More</a>
             </button>
           </div>
         </section>

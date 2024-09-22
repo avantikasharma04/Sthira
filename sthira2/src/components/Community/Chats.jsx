@@ -6,8 +6,8 @@ import sp from '../Community/sp.jpg'
 
 const ProductCard = ({ name, image }) => (
 
-  <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 p-10 bg-orange-50">
-    <img className="w-full h-20" src={image} alt={name} />
+  <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 p-10 bg-orange-50 m-12">
+    <img className="w-full " src={image} alt={name} />
     <div className="px-6 py-4">
       <div className="font-bold text-xl mb-2">{name}</div>
       <p className='text-lightText'>251 Chats | Serious</p>
@@ -16,7 +16,7 @@ const ProductCard = ({ name, image }) => (
     
     <div className="px-6 pt-4 pb-2">
       <button className="bg-brightColor2 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded">
-        View Chat
+      <a href="/Botpage">Learn More </a>
       </button>
     </div>
   </div>
@@ -46,8 +46,8 @@ const ProductList = () => {
         
       ))}
 
-<div className="bg-white p-10 rounded-lg shadow-lg text-center hover:bg-brightColor2  w-full">
-      <h2 className="text-3xl text-gray-500 font-bold align-middle hover:text-white">My Conversations</h2>
+<div className="bg-brightColor2 p-10 rounded-lg shadow-lg text-center   w-full">
+      <h2 className="text-3xl text-white font-bold align-middle ">My Conversations</h2>
 
 
       </div>

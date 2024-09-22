@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Anxiety from '../components/Anxiety_form/Anxiety'
+import Eatingdis from '../components/Eating/Eatingdis'
 
-const Anx = () => {
+const Eating = () => {
   return (
     <div>
       <Navbar/>
-      <Anxiety/>
+      <Eatingdis/>
     </div>
   )
 }
 
-export default Anx
+export default Eating

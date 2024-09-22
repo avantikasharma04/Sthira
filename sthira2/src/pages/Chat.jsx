@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Communities from '../components/Community/Communites'
+import Communities from '../components/Community/Chats'
 import Chatbot from '../components/Chatbot/Chatbot'
 
 const Community = () => {
@@ -8,8 +8,6 @@ const Community = () => {
     <>
       <Navbar/>
       <Communities/>
-      <Chatbot/>
-      
     </>
   )
 }

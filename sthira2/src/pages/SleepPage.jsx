@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Anxiety from '../components/Anxiety_form/Anxiety'
+import Sleep from '../components/Sleepdis/Sleep'
 
-const Anx = () => {
+const SleepPage = () => {
   return (
     <div>
       <Navbar/>
-      <Anxiety/>
+      <Sleep/>
     </div>
   )
 }
 
-export default Anx
+export default SleepPage
