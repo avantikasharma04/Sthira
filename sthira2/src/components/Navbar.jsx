@@ -12,12 +12,12 @@ const Navbar = () => {
     };
 
     return (
-        <header className='fixed w-full z-10 bg-backgroundColor text-lightText py-4'>
+        <header className='fixed w-full z-10 bg-backgroundColor2 text-lightText py-4'>
             {/*nav section*/}
             <nav className='container flex justify-between items-center'>
                 <div className='flex items-center gap-2'>
-                    <RiMentalHealthFill size={40} className='text-backgroundColor2' />
-                    <Link to="/" className='font-bold text-2xl'>Sthira</Link>
+                    <RiMentalHealthFill size={40} className='text-backgroundColor' />
+                    <Link to="/" className='font-bold text-2xl text-brightColor2'>Sthira</Link>
                 </div>
                 <div className='hidden md:flex items-center gap-8 font-medium text-xl'>
                     <Link to="/" className='hover:text-white transition duration-200 ease-linear'>Home</Link >

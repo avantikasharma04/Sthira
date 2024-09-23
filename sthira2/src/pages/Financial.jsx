@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Chatbot from '../components/Chatbot/Chatbot'
+import Payment from '../components/Fina/Payment'
 
-const Botpage = () => {
+const Financial = () => {
   return (
     <div>
       <Navbar/>
-      <Chatbot/>
+      <Payment/>
     </div>
   )
 }
 
-export default Botpage
+export default Financial
