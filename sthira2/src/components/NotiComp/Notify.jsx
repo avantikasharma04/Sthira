@@ -1,7 +1,7 @@
 // src/components/SettingsPage.js
 import React, { useState } from 'react';
 
-const SettingsPage = () => {
+const Notify = () => {
   const [settings, setSettings] = useState({
     desktopNotification: false,
     chatNotification: false,
@@ -19,23 +19,22 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row p-4 pt-20">
+    <div className="flex flex-col md:flex-row p-4 pt-24 bg-backgroundColor">
     {/* Sidebar */}
     <div className="w-full md:w-1/4 bg-white p-4 rounded-lg">
       <h2 className="font-semibold text-2xl text-gray-400 mb-4">Settings</h2>
       <ul>
         <li className="mb-3 text-xl cursor-pointer "><a href="/Account">Account</a></li>
         <li className="mb-3 text-xl cursor-pointer "><a href="/Financial">Financial & payments</a></li>
-        <li className="mb-3 text-xl cursor-pointer">Appearance</li>
+        <li className="mb-3 text-xl cursor-pointer"><a href="/Appear">Appearance</a></li>
       </ul>
       <h2 className="font-semibold  mt-4 mb-4 text-2xl text-gray-400">System</h2>
       <ul>
-        <li className="mb-3 text-xl cursor-pointer text-green-600">Notifications</li>
-        <li className='text-xl cursor-pointer'>Preferences</li>
+        <li className="mb-3 text-xl cursor-pointer text-green-600"><a href="/Notification"></a>Notifications</li>
       </ul>
     </div>
     
-    <div className="min-h-screen bg-backgroundColor flex flex-col items-center w-full pt-10">
+    <div className="min-h-screen bg-backgroundColor flex flex-col items-center w-full ">
       <div className="w-full max-w-2xl bg-white rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-semibold mb-4">Notification Settings</h2>
         <div className="space-y-4">
@@ -65,4 +64,4 @@ const SettingsPage = () => {
   );
 };
 
-export default SettingsPage;
+export default Notify;

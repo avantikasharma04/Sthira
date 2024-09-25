@@ -9,21 +9,20 @@ const Payment = () => {
   const [newPassword, setNewPassword] = useState("");
 
   return (
-    <div className="flex flex-col md:flex-row p-4 pt-20 ">
+    <div className="flex flex-col md:flex-row p-4 pt-20 bg-backgroundColor h-full">
       {/* Sidebar */}
-      <div className="w-full md:w-1/4 bg-white p-4 rounded-lg">
-        <h2 className="font-semibold text-2xl text-gray-400 mb-4">Settings</h2>
-        <ul>
-          <li className="mb-3 text-xl cursor-pointer "><a href="/Account">Account</a></li>
-          <li className="mb-3 text-xl cursor-pointer text-green-600"><a href="/Financial">Financial & payments</a></li>
-          <li className="mb-3 text-xl cursor-pointer">Appearance</li>
-        </ul>
-        <h2 className="font-semibold  mt-4 mb-4 text-2xl text-gray-400">System</h2>
-        <ul>
-          <li className="mb-3 text-xl cursor-pointer"><a href="/Notification">Notifications</a></li>
-          <li className='text-xl cursor-pointer'>Preferences</li>
-        </ul>
-      </div>
+      <div className="w-full md:w-1/4 bg-white p-4 rounded-lg ">
+      <h2 className="font-semibold text-2xl text-gray-400 mb-4">Settings</h2>
+      <ul>
+        <li className="mb-3 text-xl cursor-pointer "><a href="/Account">Account</a></li>
+        <li className="mb-3 text-xl cursor-pointer text-green-600"><a href="/Financial">Financial & payments</a></li>
+        <li className="mb-3 text-xl cursor-pointer"><a href="/Appear">Appearance</a></li>
+      </ul>
+      <h2 className="font-semibold  mt-4 mb-4 text-2xl text-gray-400">System</h2>
+      <ul>
+        <li className="mb-3 text-xl cursor-pointer "><a href="/Notification">Notifications</a></li>
+      </ul>
+    </div>
 
       {/* Main Content */}
       <div className="flex flex-col md:flex-row p-4 space-y-6 md:space-y-0 md:space-x-6 bg-backgroundColor w-full h-full">

@@ -3,7 +3,7 @@ import home2 from '../../../assets/img/overall/home2.png'
 
 function Hero() {
   return (
-    <div className="min-h-screen bg-backgroundColor flex flex-col items-center justify-center ">
+    <div className="min-h-screen bg-backgroundColor2 flex flex-col items-center justify-center ">
       <main className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center p-10 bg-white rounded-lg shadow-lg">
         <div className="flex-1 flex justify-center">
           <img
@@ -28,6 +28,8 @@ function Hero() {
         </div>
       </main>
     </div>
+
+    
   );
 }
 

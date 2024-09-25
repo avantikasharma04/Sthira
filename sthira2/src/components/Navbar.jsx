@@ -20,12 +20,12 @@ const Navbar = () => {
                     <Link to="/" className='font-bold text-2xl text-brightColor2'>Sthira</Link>
                 </div>
                 <div className='hidden md:flex items-center gap-8 font-medium text-xl'>
-                    <Link to="/" className='hover:text-white transition duration-200 ease-linear'>Home</Link >
-                    <Link to="/about" className='hover:text-white transition duration-200 ease-linear'>About Us</Link>
-                    <Link to="/community" className='hover:text-white transition duration-200 ease-linear'>Chats</Link>
-                    <Link to="/account" className='hover:text-white transition duration-200 ease-linear'>Account</Link>
+                    <Link to="/" className='hover:text-hover text-white transition duration-200 ease-linear'>Home</Link >
+                    <Link to="/about" className='hover:text-hover text-white transition duration-200 ease-linear'>Our Services</Link>
+                    <Link to="/community" className='hover:text-hover text-white transition duration-200 ease-linear'>Chats</Link>
+                    <Link to="/account" className='hover:text-hover text-white transition duration-200 ease-linear'>Account</Link>
 
-                    <button className='hidden lg:flex border-2 border-backgroundColor2 text-lg px-4 rounded-md hover:bg-backgroundColor2 transition duration-200 ease-linear hover:text-white'>Emergency</button>
+                    <button className='hidden lg:flex border-2 border-green-600 bg-green-600 text-lg px-4 rounded-md hover:bg-green-900 transition duration-200 ease-linear text-white hover:text-hover'>Emergency</button>
                 </div>
                 <div className='md:hidden flex items-center'>
                     {menu ? (

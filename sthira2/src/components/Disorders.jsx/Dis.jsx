@@ -1,8 +1,7 @@
 import React from 'react'
-import bipolar from '../Disorders/disorders/bipolar.png'
 import {Link} from "react-router-dom";
 
-const Disorders = () => {
+const Dis = () => {
   return (
     <>
       <div className='text-4xl p-3 text-center text-backgroundColor2'>
@@ -80,4 +79,4 @@ const Disorders = () => {
   )
 }
 
-export default Disorders
+export default Dis

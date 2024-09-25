@@ -12,19 +12,17 @@ const Profile = () => {
     <div className="flex flex-col md:flex-row p-4 pt-24 bg-backgroundColor">
       {/* Sidebar */}
       <div className="w-full md:w-1/4 bg-white p-4 rounded-lg">
-        <h2 className="font-semibold text-2xl text-gray-600 mb-4">Settings</h2>
-        <ul>
-          <li className="mb-3 text-xl cursor-pointer text-green-600">Account</li>
-          <li className="mb-3 text-xl cursor-pointer"><a href="/Financial">Financial & payments</a></li>
-          <li className="mb-3 text-xl cursor-pointer">Appearance</li>
-        </ul>
-        <h2 className="font-semibold  mt-4 mb-4 text-2xl text-gray-600">System</h2>
-        <ul>
-          <li className="mb-3 text-xl cursor-pointer"><a href="/Notification">Notifications</a></li>
-          <li className='text-xl cursor-pointer'>Preferences</li>
-        </ul>
-      </div>
-
+      <h2 className="font-semibold text-2xl text-gray-400 mb-4">Settings</h2>
+      <ul>
+        <li className="mb-3 text-xl cursor-pointer text-green-600"><a href="/Account">Account</a></li>
+        <li className="mb-3 text-xl cursor-pointer "><a href="/Financial">Financial & payments</a></li>
+        <li className="mb-3 text-xl cursor-pointer"><a href="/Appear">Appearance</a></li>
+      </ul>
+      <h2 className="font-semibold  mt-4 mb-4 text-2xl text-gray-400">System</h2>
+      <ul>
+        <li className="mb-3 text-xl cursor-pointer "><a href="/Notification">Notifications</a></li>
+      </ul>
+    </div>
       {/* Main Content */}
       <div className="w-full md:w-3/4 md:ml-8 bg-white p-6 rounded-lg shadow-md">
         <h2 className="font-semibold text-xl mb-6">Account</h2>

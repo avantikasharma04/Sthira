@@ -1,12 +1,12 @@
 import React from 'react'
-import Sett from '../components/NotiComp/Notify'
+import Notify from '../components/NotiComp/Notify'
 import Navbar from '../components/Navbar'
 
 const Set = () => {
   return (
     <div>
         <Navbar/>
-      <Sett/>
+      <Notify/>
     </div>
   )
 }
