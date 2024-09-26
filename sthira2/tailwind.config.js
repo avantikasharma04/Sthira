@@ -10,6 +10,7 @@ export default {
         backgroundColor:"#eae7dc",
         backgroundColor2:'#e85a47',
         lightText:"#2F4F4F",
+        textcolor:'#e98074',
         brightColor:"#E98074",
         brightColor2:"#FFDAB9",
         hover:'#d8c3a5',

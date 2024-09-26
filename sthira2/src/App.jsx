@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Home from './pages/Home'
-import About from './pages/About'
+import Disorderpage from './pages/Disorderpage'
 import Community from './pages/Chat'
 import Account from './pages/Account'
 import Chatbot from './components/Chatbot/Chatbot'
@@ -23,7 +23,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/about' element={<About/>}/>
+          <Route path='/Disorderpage' element={<Disorderpage/>}/>
           <Route path='/Appear' element={<Appear/>}/>
           <Route path='/community' element={<Community/>}/>
           <Route path='/account' element={<Account/>}/>
