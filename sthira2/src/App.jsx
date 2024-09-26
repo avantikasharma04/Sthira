@@ -12,14 +12,19 @@ import BecksDep from './pages/BecksDep'
 import Eating from './pages/Eating'
 import SleepPage from './pages/SleepPage'
 import ImagePage from './pages/ImagePage'
+import Botpage from './pages/Botpage'
+import Financial from './pages/Financial'
+import Notification from './pages/Notification'
+import Appear from './pages/Appear'
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<Home/>}/>
+          <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
+          <Route path='/Appear' element={<Appear/>}/>
           <Route path='/community' element={<Community/>}/>
           <Route path='/account' element={<Account/>}/>
           <Route path='/Chatbot' element={<Chatbot/>}/>
@@ -30,6 +35,10 @@ const App = () => {
           <Route path='/Eating' element={<Eating/>}/>
           <Route path='/SleepPage' element={<SleepPage/>}/>
           <Route path='/ImagePage' element={<ImagePage/>}/>
+          <Route path='/BotPage' element={<Botpage/>}/>
+          <Route path='/Financial' element={<Financial/>}/>
+          <Route path='/Notification' element={<Notification/>}/>
+          
           </Routes>
       </BrowserRouter>
     </div>

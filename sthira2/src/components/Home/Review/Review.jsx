@@ -4,7 +4,7 @@ import woman2 from '../Review/woman2.jpg'
 
 const Review = () => {
   return (
-    <section className="py-10 bg-white">
+    <section className="py-10 bg-backgroundColor">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold">
@@ -12,14 +12,14 @@ const Review = () => {
           </h2>
         </div>
         <div className="flex justify-center space-x-4 mb-8">
-          <button className="p-2 rounded-full bg-backgroundColor shadow-md hover:bg-hover">
+          <button className="p-2 rounded-full bg-white shadow-md hover:bg-hover">
             <span className="sr-only">Previous</span>
            
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
             </svg>
           </button>
-          <button className="p-2 rounded-full bg-backgroundColor shadow-md hover:bg-hover">
+          <button className="p-2 rounded-full bg-white shadow-md hover:bg-hover">
             <span className="sr-only">Next</span>
             
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +28,7 @@ const Review = () => {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-backgroundColor p-6 rounded-lg shadow-lg border-2 hover:border-purple-700">
+          <div className="bg-white p-6 rounded-lg shadow-lg border-2 hover:bg-hover">
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center">
                 <span className="text-yellow-500 text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -46,7 +46,7 @@ const Review = () => {
               </div>
             </div>
           </div>
-          <div className="bg-backgroundColor p-6 rounded-lg shadow-lg border-2 hover:border-purple-700">
+          <div className="bg-white p-6 rounded-lg shadow-lg border-2 hover:bg-hover">
             <div className="flex justify-between items-center mb-4 ">
               <div className="flex items-center">
                 <span className="text-yellow-500 text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>

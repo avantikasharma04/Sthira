@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       colors:{
-        backgroundColor:"#E6E6FA",
-        backgroundColor2:'#f25278',
+        backgroundColor:"#eae7dc",
+        backgroundColor2:'#e85a47',
         lightText:"#2F4F4F",
-        brightColor:"#98FF98",
+        brightColor:"#E98074",
         brightColor2:"#FFDAB9",
-        hover:'#7851a9',
+        hover:'#d8c3a5',
         chat1:'#ff9a8a',
         chat2:'#e6cdc5',
       },
