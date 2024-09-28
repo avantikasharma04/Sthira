@@ -1,5 +1,5 @@
 import React from 'react';
-import therapy from '../About/therapy.png';
+import the from '../About/the.jpeg'
 
 const About = () => {
   return (
@@ -16,7 +16,7 @@ const About = () => {
           </button>
         </div>
         <div className="w-full md:w-1/2">
-          <img src={therapy} alt="img" className="w-full rounded-lg shadow-md" />
+          <img src={the} alt="img" className="w-full rounded-lg shadow-md" />
         </div>
       </div>
     </section>

@@ -21,7 +21,7 @@ const Navbar = () => {
                 </div>
                 <div className='hidden md:flex items-center gap-8 font-medium text-xl'>
                     <Link to="/" className='hover:text-hover text-white transition duration-200 ease-linear'>Home</Link >
-                    <Link to="/about" className='hover:text-hover text-white transition duration-200 ease-linear'>Our Services</Link>
+                    <Link to="/Disorderpage" className='hover:text-hover text-white transition duration-200 ease-linear'>Our Services</Link>
                     <Link to="/community" className='hover:text-hover text-white transition duration-200 ease-linear'>Chats</Link>
                     <Link to="/account" className='hover:text-hover text-white transition duration-200 ease-linear'>Account</Link>
 
@@ -38,7 +38,7 @@ const Navbar = () => {
             {/*responsive*/}
             <div className={`${menu ? "translate-x-0" : "-translate-x-full"} md:hidden flex flex-col absolute bg-backgroundColor text-white left-0 top-16 font-semibold text-2xl text-center pt-8 pb-4 gap-8 w-3/4 h-fit rounded-br-xl transition-transform duration-300`}>
                 <Link to="/" className='hover:text-white transition duration-200 ease-linear'>Home</Link>
-                <Link to="/about" className='hover:text-white transition duration-200 ease-linear'>About Us</Link>
+                <Link to="/Disorderpage" className='hover:text-white transition duration-200 ease-linear'>About Us</Link>
                 <Link to="/community" className='hover:text-white transition duration-200 ease-linear'>Chats</Link>
                 <Link to="/account" className='hover:text-white transition duration-200 ease-linear'>Account</Link>
                 <div>

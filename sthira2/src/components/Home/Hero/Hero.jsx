@@ -1,5 +1,6 @@
 import React from 'react';
 import home2 from '../../../assets/img/overall/home2.png'
+import img6 from '../Hero/img6.jpeg'
 
 function Hero() {
   return (
@@ -7,7 +8,7 @@ function Hero() {
       <main className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center p-10 bg-white rounded-lg shadow-lg">
         <div className="flex-1 flex justify-center">
           <img
-            src={home2}  
+            src={img6}  
             alt="Mental Health"
             className="w-full max-w-xs md:max-w-sm object-cover rounded-lg"
           />
