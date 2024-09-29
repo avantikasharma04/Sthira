@@ -16,6 +16,7 @@ import Botpage from './pages/Botpage'
 import Financial from './pages/Financial'
 import Notification from './pages/Notification'
 import Appear from './pages/Appear'
+import Generalform from './pages/Generalform'
 
 const App = () => {
   return (
@@ -38,7 +39,7 @@ const App = () => {
           <Route path='/BotPage' element={<Botpage/>}/>
           <Route path='/Financial' element={<Financial/>}/>
           <Route path='/Notification' element={<Notification/>}/>
-          
+          <Route path='/Generalform' element={<Generalform/>}/>
           </Routes>
       </BrowserRouter>
     </div>
