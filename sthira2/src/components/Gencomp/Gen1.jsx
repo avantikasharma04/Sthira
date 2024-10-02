@@ -252,9 +252,8 @@ const Gen1 = () => {
                     </div>
                     
                     <div>
-                        <label className="block text-gray-700">What is your Age-group?</label>
+                        <label className="block text-gray-700">What is your relationship status?</label>
                         <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                            <option value="">What is your relationship status?</option>
                             <option value="">Select your option</option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
