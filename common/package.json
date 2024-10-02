@@ -1,0 +1,18 @@
+{
+  "name": "@avantika04/sthira-common",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@avantika04/sthira-common": "file:",
+    "common": "file:",
+    "typescript": "^5.6.2",
+    "zod": "^3.23.8"
+  }
+}
