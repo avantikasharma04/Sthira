@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Reg from '../components/Regcomp/Reg'
+import Reg from '../components/RegComp/Reg'
 import Footer from '../components/Home/Footer/Footer'
 
 const Register = () => {

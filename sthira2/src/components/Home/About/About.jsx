@@ -12,7 +12,7 @@ const About = () => {
             Provide us with necessary data to get an AI generated personalized plan for you
           </p>
           <button className="py-2 px-4 text-xl bg-backgroundColor2 text-white rounded hover:bg-pink-900 transition">
-            →
+           <a href="/Genform"> →</a>
           </button>
         </div>
         <div className="w-full md:w-1/2">

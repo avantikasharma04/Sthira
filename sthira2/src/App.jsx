@@ -16,6 +16,10 @@ import Botpage from './pages/Botpage'
 import Financial from './pages/Financial'
 import Notification from './pages/Notification'
 import Appear from './pages/Appear'
+import Genform from './pages/Genform'
+import Genform2 from './pages/Genform2'
+import Genform3 from './pages/Genform3'
+import Optionpage from './pages/Optionpage'
 
 const App = () => {
   return (
@@ -38,6 +42,10 @@ const App = () => {
           <Route path='/BotPage' element={<Botpage/>}/>
           <Route path='/Financial' element={<Financial/>}/>
           <Route path='/Notification' element={<Notification/>}/>
+          <Route path='/Genform' element={<Genform/>}/>
+          <Route path='/Genform2' element={<Genform2/>}/>
+          <Route path='/Genform3' element={<Genform3/>}/>
+          <Route path='/Optionpage' element={<Optionpage/>}/>
           </Routes>
       </BrowserRouter>
     </div>
