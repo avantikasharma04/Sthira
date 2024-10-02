@@ -1,7 +1,7 @@
 import React from 'react';
 import pep2 from '../Gencomp/pep2.jpeg';
 
-const Gen1 = () => {
+const Gen2 = () => {
     return (
         
         <div className="min-h-screen bg-backgroundColor2 flex items-center justify-center">
@@ -9,7 +9,7 @@ const Gen1 = () => {
             
             </div>
             <div className="bg-backgroundColor mt-6 mb-6 p-8 rounded-lg shadow-lg w-full max-w-md">
-                <img src={pep1} alt="Mental Health" className="w-full h-48 object-cover rounded-t-lg mb-4" />
+                <img src={pep2} alt="Mental Health" className="w-full h-48 object-cover rounded-t-lg mb-4" />
                 <h1 className='text-4xl'>Help us know you <span className='text-backgroundColor2'>Better</span></h1>
                 <br />
                 <p className='text-justify text-green-700'> *The following questions are designed to match you to provide you better chatbot assistance or a licensed therapist  based on your therapy needs and personal preferences.</p>
@@ -110,4 +110,4 @@ const Gen1 = () => {
     );
 };
 
-export default Gen1;
+export default Gen2;

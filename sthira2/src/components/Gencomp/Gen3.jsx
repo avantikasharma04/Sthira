@@ -1,7 +1,7 @@
 import React from 'react';
-import pep2 from '../Gencomp/pep2.jpeg';
+import pep1 from '../Gencomp/pep1.jpeg';
 
-const Gen1 = () => {
+const Gen3 = () => {
     return (
         
         <div className="min-h-screen bg-backgroundColor2 flex items-center justify-center">
@@ -41,7 +41,7 @@ const Gen1 = () => {
                     </div>
 
                     <div>
-                        <label className="block text-gray-700">Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual.
+                        <label className="block text-gray-700 text-justify">Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual.
 
                         </label>
                         <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
@@ -105,7 +105,7 @@ const Gen1 = () => {
                     </div>
 
                     <div>
-                        <label className="block text-gray-700">Feeling bad about yourself - or that you are a failure or have let yourself or your family down.
+                        <label className="block text-gray-700 text-justify">Feeling bad about yourself - or that you are a failure or have let yourself or your family down.
                         </label>
                         <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
                             <option value="">Select your option</option>
@@ -126,4 +126,4 @@ const Gen1 = () => {
     );
 };
 
-export default Gen1;
+export default Gen3;
