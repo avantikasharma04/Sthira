@@ -10,31 +10,31 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Who are the therapists?",
-      answer: "BetterHelp has a network of licensed, accredited, and experienced therapists who are qualified to help you with various mental health issues."
+      answer: "Sthira has a network of licensed, accredited, and experienced therapists who are qualified to help you with various mental health issues."
     },
     {
       question: "How can Chatbot help me feel better?",
-      answer: "You will be matched with a therapist based on your needs and preferences, and you can change therapists if the match is not ideal."
+      answer: "You will be assigned with a Chatbot based on your needs and preferences, and you can change to a therapist if thechatbot doesn't help."
     },
     {
       question: "Is Sthira right for me?",
-      answer: "BetterHelp is designed for people who want accessible, affordable therapy in a convenient online format. It may not be suitable for severe mental health issues."
+      answer: "Sthira is designed for people who want accessible, affordable therapy in a convenient online format. It may not be suitable for severe mental health issues."
     },
     {
       question: "What is the average cost of services offered by Sthira?",
-      answer: "The cost of BetterHelp ranges from $60 to $90 per week, depending on your plan and location. It is billed every four weeks."
+      answer: "The cost of Sthira ranges from INR 500 to INR 2000 per week, depending on your plan and mode of therapy. It is billed every four weeks.Few of the services can be availed by the customers for free"
     },
     {
       question: "Is Subscription to Sthira's Chatbot and Emergency services useful?",
-      answer: "After signing up, you'll typically be matched with a therapist within 24 to 48 hours."
+      answer: "After signing up, you'll typically be matched with a therapist or be assigned a chatbot (based on your preferences and needs) within 24 to 48 hours."
     },
     {
       question: "What are the features of emergency button in sthira?",
-      answer: "You can communicate with your therapist via messaging, live chat, phone calls, or video sessions based on your preferences."
+      answer: "You wil be provided with immediate care and your contact and location will be sent to emergency services as soon as possible."
     },
     {
       question: "Can Sthira substitute for traditional face-to-face therapy?",
-      answer: "While BetterHelp offers many benefits, it is not a complete substitute for face-to-face therapy, especially for individuals with serious or complex mental health needs."
+      answer: "While Sthira offers many benefits, it is not a complete substitute for face-to-face therapy, especially for individuals with serious or complex mental health needs."
     }
   ];
 
@@ -48,7 +48,7 @@ const FAQ = () => {
         {faqs.map((faq, index) => (
           <div key={index} className="border-b">
             <button
-              className="w-full text-left flex justify-between items-center py-4 text-lg font-medium focus:outline-none"
+              className="w-full text-left flex justify-between items-center py-4 text-xl font-semibold focus:outline-none"
               onClick={() => toggleAccordion(index)}
             >
               {faq.question}
@@ -57,7 +57,7 @@ const FAQ = () => {
             {activeIndex === index && (
               <div className="py-2 text-white">
                
-                <p>{faq.answer}</p>
+                <p >{faq.answer}</p>
               </div>
             )}
           </div>

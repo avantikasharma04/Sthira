@@ -22,7 +22,7 @@ const Log = () => {
           <input type="password" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-rose-500 focus:border-rose-500" />
         </div>
         <button type="submit" className="w-full py-2 px-4 bg-backgroundColor2 text-white rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500">
-            <a href="/OptionPage">Register</a></button>
+            <a href="/">Register</a></button>
       </form>
       <p className="mt-4 text-center text-sm text-gray-600">
         Don't have an account? <a href="/Register" className="text-red-600 hover:underline">Register</a>

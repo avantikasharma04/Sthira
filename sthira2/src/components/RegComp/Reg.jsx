@@ -27,7 +27,7 @@ const Reg = () => {
           <input type="password" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-rose-500 focus:border-rose-500" />
         </div>
         <button type="submit" className="w-full py-2 px-4 bg-red-500 text-white rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
-            <a href="/Optionpage">Register</a></button>
+            <a href="/">Register</a></button>
       </form>
       <p className="mt-4 text-center text-sm text-gray-600">
        Already have an account? <a href="/Login" className="text-red-600 hover:underline">Login</a>

@@ -1,5 +1,5 @@
 import React from 'react';
-import pep1 from '../Gencomp/pep1.jpeg';
+import yoga from '../Gencomp/yoga.jpeg';
 
 const Gen3 = () => {
     return (
@@ -9,7 +9,7 @@ const Gen3 = () => {
             
             </div>
             <div className="bg-backgroundColor mt-6 mb-6 p-8 rounded-lg shadow-lg w-full max-w-md">
-                <img src={pep1} alt="Mental Health" className="w-full h-48 object-cover rounded-t-lg mb-4" />
+                <img src={yoga} alt="Mental Health" className="w-full h-48 object-cover rounded-t-lg mb-4" />
                 <h1 className='text-4xl'>Help us know you <span className='text-backgroundColor2'>Better</span></h1>
                 <br />
                 <p className='text-justify text-green-700 text-bold'> Over the past 2 weeks, how often have you been bothered by any of the following problems</p>
