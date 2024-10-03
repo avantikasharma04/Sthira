@@ -1,10 +1,11 @@
 import React from 'react'
+import Auth from '../components/RegComp/Auth'
 import Log from '../components/LoginComp/Log'
 
 const Login = () => {
   return (
     <div>
-      <Log/>
+      <Auth type="signup" />
     </div>
   )
 }
