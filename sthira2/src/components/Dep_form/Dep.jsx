@@ -8,7 +8,6 @@ const Dep = () => {
   const questions = [
     {
       id: 1,
-
       options: [
         "I do not feel sad.",
         "I feel sad",
@@ -18,7 +17,6 @@ const Dep = () => {
     },
     {
       id: 2,
-
       options: [
         "I am not particularly discouraged about the future.",
         "I feel discouraged about the future",
@@ -28,7 +26,6 @@ const Dep = () => {
     },
     {
       id: 3,
-
       options: [
         "I do not feel like a failure.",
         "I feel I have failed more than the average person",
@@ -110,7 +107,7 @@ const Dep = () => {
   id: 11,
 
     options: [
-     " I am no more irritated by things than I ever was.",
+    " I am no more irritated by things than I ever was.",
     " I am slightly more irritated now than usual.",
       " I am quite annoyed or irritated a good deal of the time.",
       " I feel irritated all the time. ",
@@ -131,9 +128,9 @@ const Dep = () => {
 
     options: [
       "I make decisions about as well as I ever could.",
- "I put off making decisions more than I used to.",
- "I have greater difficulty in making decisions more than I used to.",
- "I can't make decisions at all anymore",
+  "I put off making decisions more than I used to.",
+  "I have greater difficulty in making decisions more than I used to.",
+  "I can't make decisions at all anymore",
     ],
       },
 {
@@ -141,9 +138,9 @@ const Dep = () => {
 
     options: [
     "I don't feel that I look any worse than I used to.",
- "I am worried that I am looking old or unattractive.",
- "I feel there are permanent changes in my appearance that make me look unattractive",
- "I believe that I look ugly",
+  "I am worried that I am looking old or unattractive.",
+  "I feel there are permanent changes in my appearance that make me look unattractive",
+  "I believe that I look ugly",
     ],
       },
 {
@@ -160,9 +157,9 @@ const Dep = () => {
   id: 16,
 
     options: ["I can sleep as well as usual.",
- "I don't sleep as well as I used to.",
- "I wake up 1 - 2 hours earlier than usual and find it hard to get back to sleep.",
- "I wake up several hours earlier than I used to and cannot get back to sleep. ",
+  "I don't sleep as well as I used to.",
+  "I wake up 1 - 2 hours earlier than usual and find it hard to get back to sleep.",
+  "I wake up several hours earlier than I used to and cannot get back to sleep. ",
     ],
       },
 
@@ -170,9 +167,9 @@ const Dep = () => {
   id: 17,
 
     options: ["I don't get more tired than usual.",
- "I get tired more easily than I used to.",
- "I get tired from doing almost anything.",
- "I am too tired to do anything.  ",
+  "I get tired more easily than I used to.",
+  "I get tired from doing almost anything.",
+  "I am too tired to do anything.  ",
           ],
 },
 
@@ -183,20 +180,20 @@ const Dep = () => {
       "My appetite is no worse than usual.",
       " My appetite is not as good as it used to be.",
       "My appetite is much worse now.",
-     "I have no appetite at all anymore.",
-                 ],
+      "I have no appetite at all anymore.",
+                ],
                   },
 
 {
   id: 19,
 
     options: [
- "I haven't lost much weight, if any, lately.",
- "I have lost more than five pounds.",
- "I have lost more than ten pounds.",
- "I have lost more than fifteen pounds. ",
+  "I haven't lost much weight, if any, lately.",
+  "I have lost more than five pounds.",
+  "I have lost more than ten pounds.",
+  "I have lost more than fifteen pounds. ",
 ],
-   },
+},
 
 {
   id: 20,
@@ -207,54 +204,85 @@ const Dep = () => {
 " I am very worried about physical problems and it's hard to think of much else.",
 " I am so worried about my physical problems that I cannot think of anything else. ",
   ],
-   },
+  },
 
 
-  
+
   ];
 
-// Handle radio button change
-const handleAnswerChange = (questionId, value) => {
-  setAnswers({
-    ...answers,
-    [questionId]: value,
-  });
-};
 
-return (
-  <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-    <div className="bg-white p-8 rounded-lg shadow-lg max-w-4xl w-full">
-      <h2 className="text-3xl font-bold text-center mb-8">Beck's Depression Inventory</h2>
+  // Handle radio button change
+  const handleAnswerChange = (questionId, value) => {
+    setAnswers({
+      ...answers,
+      [questionId]: parseInt(value, 10),
+    });
+  };
 
-      {questions.map((q) => (
-        <div key={q.id} className="mb-6">
-          <p className="font-medium text-lg mb-2">{q.id}. {q.question}</p>
-          {q.options.map((option, index) => (
-            <div key={index} className="flex items-center mb-2">
-              <input
-                type="radio"
-                id={`q${q.id}-opt${index}`}
-                name={`q${q.id}`}
-                value={index + 1}
-                className="form-radio text-blue-600 mr-2"
-                onChange={() => handleAnswerChange(q.id, index)}
-              />
-              <label htmlFor={`q${q.id}-opt${index}`} className="text-gray-700">
-                {index + 1}. {option}
-              </label>
+  // Calculate the total score
+  const calculateScore = () => {
+    const totalScore = Object.values(answers).reduce((sum, value) => sum + value, 0);
+    return totalScore;
+  };
+
+  // Determine the depression level based on the score
+  const getDepressionLevel = () => {
+    const score = calculateScore();
+    if (score <= 10) return 'These ups and downs are considered normal';
+    if (score <= 16) return 'Mild mood disturbance';
+    if (score <= 20) return 'Borderline clinical depression';
+    if (score <= 30) return 'Moderate depression';
+    if (score <= 40) return 'Severe depression';
+    return 'Extreme depression';
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const totalScore = calculateScore();
+    const depressionLevel = getDepressionLevel();
+    alert(`Your total score is ${totalScore}. Level of Depression: ${depressionLevel}`);
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center pt-20">
+      <div className="bg-white p-8 rounded-lg shadow-lg max-w-4xl w-full">
+        <h2 className="text-3xl font-bold text-center mb-8">Beck's Depression Inventory</h2>
+
+        <form onSubmit={handleSubmit}>
+          {questions.map((q) => (
+            <div key={q.id} className="mb-6">
+              <p className="font-medium text-lg mb-2">{q.id}. {q.options[0]}</p>
+              {q.options.map((option, index) => (
+                <div key={index} className="flex items-center mb-2">
+                  <input
+                    type="radio"
+                    id={`q${q.id}-opt${index}`}
+                    name={`q${q.id}`}
+                    value={index}
+                    className="form-radio text-blue-600 mr-2"
+                    onChange={() => handleAnswerChange(q.id, index)}
+                  />
+                  <label htmlFor={`q${q.id}-opt${index}`} className="text-gray-700">
+                    {index + 1}. {option}
+                  </label>
+                </div>
+              ))}
             </div>
           ))}
-        </div>
-      ))}
 
-      <div className="text-center">
-        <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-500 transition">
-          Submit
-        </button>
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-500 transition"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default Dep;

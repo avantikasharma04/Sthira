@@ -5,11 +5,12 @@
     "deploy": "wrangler deploy --minify"
   },
   "dependencies": {
-    "@avantika04/sthira-common": "^1.0.0",
+    "@avantika04/sthira-common": "^1.0.2",
     "@prisma/client": "^5.20.0",
     "@prisma/extension-accelerate": "^1.2.0",
     "Backend": "file:",
     "hono": "^4.6.3",
+    "jwt-decode": "^4.0.0",
     "prisma": "^5.20.0"
   },
   "devDependencies": {

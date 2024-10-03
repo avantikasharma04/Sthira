@@ -9,9 +9,17 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  name String?
-  username String @unique
-  password String
+  id           Int           @id @default(autoincrement())
+  name         String?
+  username     String        @unique
+  password     String
+  anxietyForms AnxietyForm[] // Relation to the AnxietyForm model
 }
 
+model AnxietyForm {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  score     Int      // Anxiety score based on the form
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
