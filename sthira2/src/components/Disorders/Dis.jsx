@@ -72,11 +72,11 @@ const Dis = () => {
 
         {/* Card 6 */}
         <section className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 border-2 rounded-lg border-hover shadow-lg bg-backgroundColor hover:shadow-2xl transition-shadow duration-300">
-          <img src={img5} alt="Bipolar" className='rounded-xl w-full h-64 object-cover' />
+          <img src={img5} alt="Hopelessness" className='rounded-xl w-full h-64 object-cover' />
           <div className="text-center mt-4">
-            <h1 className='text-xl p-2 text-lightText font-semibold'>Bipolar</h1>
+            <h1 className='text-xl p-2 text-lightText font-semibold'>Hopelessness</h1>
             <button className='hover:text-white py-1 px-4 mt-2 border-2 border-backgroundColor2 rounded-md text-lightText hover:bg-backgroundColor2 transition-colors duration-300'>
-              Learn More
+             <a href="/Hopelesspage"> Learn More</a>
             </button>
           </div>
         </section>
