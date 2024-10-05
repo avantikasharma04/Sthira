@@ -15,7 +15,7 @@ const Mood = () => {
 
   return (
     <div>
-    <div className="p-12 min-h-screen m-32 max-w-sm mx-auto bg-backgroundColor2 rounded-xl shadow-md space-y-4">
+    <div className="min-h-screen mx-auto bg-backgroundColor2 rounded-xl shadow-md space-y-4">
       <h2 className="text-center text-2xl font-bold mb-4">How do you feel?</h2>
       <div className="flex justify-around">
         {moods.map((mood) => (
