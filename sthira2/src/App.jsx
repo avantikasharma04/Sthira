@@ -21,6 +21,7 @@ import Genform2 from './pages/Genform2'
 import Genform3 from './pages/Genform3'
 import Optionpage from './pages/Optionpage'
 import Genct from './pages/Careform'
+import Moodpage from './pages/Moodpage'
 
 const App = () => {
   return (
@@ -48,6 +49,7 @@ const App = () => {
           <Route path='/Genform3' element={<Genform3/>}/>
           <Route path='/Genct' element={<Genct/>}/>
           <Route path='/Optionpage' element={<Optionpage/>}/>
+          <Route path='/Moodpage' element={<Moodpage/>}/>
           </Routes>
       </BrowserRouter>
     </div>
