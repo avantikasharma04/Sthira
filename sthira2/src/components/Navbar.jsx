@@ -23,7 +23,7 @@ const Navbar = () => {
                     <Link to="/" className='hover:text-hover text-white transition duration-200 ease-linear'>Home</Link >
                     <Link to="/Disorderpage" className='hover:text-hover text-white transition duration-200 ease-linear'>Our Services</Link>
                     <Link to="/community" className='hover:text-hover text-white transition duration-200 ease-linear'>Chats</Link>
-                    <Link to="/account" className='hover:text-hover text-white transition duration-200 ease-linear'>Account</Link>
+                    <Link to="/login" className='hover:text-hover text-white transition duration-200 ease-linear'>Login</Link>
 
                     <button className='hidden lg:flex border-2 border-green-600 bg-green-600 text-lg px-4 rounded-md hover:bg-green-900 transition duration-200 ease-linear text-white hover:text-hover'>Emergency</button>
                 </div>
@@ -40,7 +40,7 @@ const Navbar = () => {
                 <Link to="/" className='hover:text-white transition duration-200 ease-linear'>Home</Link>
                 <Link to="/Disorderpage" className='hover:text-white transition duration-200 ease-linear'>About Us</Link>
                 <Link to="/community" className='hover:text-white transition duration-200 ease-linear'>Chats</Link>
-                <Link to="/account" className='hover:text-white transition duration-200 ease-linear'>Account</Link>
+                <Link to="/login" className='hover:text-white transition duration-200 ease-linear'>Login</Link>
                 <div>
                     <button className='hover:bg-backgroundColor2 border-2 border-backgroundColor2 py-1 px-4 rounded-md'>Emergency</button>
                 </div>

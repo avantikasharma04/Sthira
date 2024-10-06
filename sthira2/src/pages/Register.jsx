@@ -7,6 +7,7 @@ import Footer from '../components/Home/Footer/Footer'
 const Register = () => {
   return (
     <div>
+      <Navbar />
       <Auth type="signin" />
     </div>
   )

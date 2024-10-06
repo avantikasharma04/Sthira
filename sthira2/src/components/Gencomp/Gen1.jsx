@@ -1,7 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import pep1 from '../Gencomp/pep1.jpeg';
 
 const Gen1 = () => {
+    const [formData, setFormData] = useState({
+        nationality: '',
+        gender: '',
+        ageGroup: '',
+        orientation: '',
+        relationshipStatus: '',
+    });
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('Please log in first');
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/v1/user/profile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Form submission failed');
+            }
+
+            const result = await response.json();
+            console.log('Form submitted:', result);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    
     return (
         
         <div className="min-h-screen bg-backgroundColor2 flex items-center justify-center">

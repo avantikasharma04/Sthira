@@ -1,0 +1,12 @@
+-- CreateTable
+CREATE TABLE "DepForm" (
+    "id" SERIAL NOT NULL,
+    "userId" INTEGER NOT NULL,
+    "score" INTEGER NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "DepForm_pkey" PRIMARY KEY ("id")
+);
+
+-- AddForeignKey
+ALTER TABLE "DepForm" ADD CONSTRAINT "DepForm_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
