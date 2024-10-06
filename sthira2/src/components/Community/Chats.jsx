@@ -5,6 +5,7 @@ import ct from '../Community/ct.jpeg';
 const ProductCard = ({ name, image }) => (
 
   <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 p-5  bg-backgroundColor hover:bg-hover cursor-pointer border-2 border-hover">
+    
     <img className="w-full h-64" src={image} alt={name} />
     <div className="px-6 py-4">
       <div className="font-bold text-xl mb-2">{name}</div>
