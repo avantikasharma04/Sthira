@@ -43,9 +43,7 @@ const ProductList = () => {
     { name: 'Teens',  image:tt},
     { name: 'Individuals',  image: it },
     { name: 'Couples',  image: ct },
-   products1=[
-      { name: 'Teens',  }
-    ]
+  
   ];
 
  
@@ -70,9 +68,7 @@ const ProductList = () => {
 <div className="flex flex-wrap justify-centre p-3 ml-56">
 
 
-{products.map((product1, index) => (
-  <ProductCard1 key={index} {...product1} />
-))}
+
         
 
       </div>
