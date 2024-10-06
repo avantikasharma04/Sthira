@@ -24,7 +24,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
             // alert the user here that the request failed
         }
     }
-    
+
     return <div className="h-screen flex justify-center flex-col">
         <div className="flex justify-center">
             <div>

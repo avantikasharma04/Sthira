@@ -70,3 +70,48 @@ try {
     return c.text('Invalid')
 }
 })
+
+userRouter.post('/profile', async (c) => {
+    const token = c.req.header('Authorization')?.split(' ')[1]; // Corrected to use `header` instead of `headers`
+    
+    if (!token) {
+        c.status(401);
+        return c.text('Unauthorized');
+    }
+
+    let jwtPayload;
+    try {
+        jwtPayload = await verify(token, c.env.JWT_SECRET) as { id: number }; // Ensure verify returns a Promise and type cast as needed
+        if (!jwtPayload.id) {
+            c.status(401);
+            return c.text('Invalid token');
+        }
+    } catch (error) {
+        c.status(401);
+        return c.text('Token verification failed');
+    }
+
+    const body = await c.req.json();
+    const prisma = new PrismaClient({
+        datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate());
+
+    try {
+        const profile = await prisma.profile.create({
+            data: {
+                userId: jwtPayload.id,
+                nationality: body.nationality,
+                gender: body.gender,
+                ageGroup: body.ageGroup,
+                orientation: body.orientation,
+                relationshipStatus: body.relationshipStatus,
+            },
+        });
+        return c.json(profile);
+    } catch (error) {
+        c.status(500);
+        return c.text('Profile creation failed');
+    } finally {
+        await prisma.$disconnect();
+    }
+});

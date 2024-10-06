@@ -1,8 +1,8 @@
 import { Hono } from 'hono'
 import { jwt } from 'hono/jwt';
 import { userRouter } from './routes/user';
-import { anxietyRouter } from './routes/anxiety';
 import { cors } from 'hono/cors'
+import { depRouter } from './routes/dep';
 
 
 const app = new Hono<{
@@ -14,8 +14,6 @@ const app = new Hono<{
 
 app.use('/*', cors())
 app.route("/api/v1/user", userRouter);
-
-app.route("/api/v1/anxiety", anxietyRouter);
 
 
 export default app

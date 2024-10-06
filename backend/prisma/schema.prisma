@@ -13,13 +13,36 @@ model User {
   name         String?
   username     String        @unique
   password     String
-  anxietyForms AnxietyForm[] // Relation to the AnxietyForm model
+  anxietyForms AnxietyForm[]
+  depForms DepForm[]
+  profiles Profile[]
 }
 
 model AnxietyForm {
   id        Int      @id @default(autoincrement())
   userId    Int
-  score     Int      // Anxiety score based on the form
+  score     Int
+  risk      String?
   user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
+}
+
+model DepForm {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  score     Int
+  risk      String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Profile {
+  id                 Int    @id @default(autoincrement())
+  userId             Int    @unique
+  nationality        String
+  gender             String
+  ageGroup           String
+  orientation        String
+  relationshipStatus String
+  user               User   @relation(fields: [userId], references: [id])
 }
