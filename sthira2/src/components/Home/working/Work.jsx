@@ -23,9 +23,7 @@ const Work = () => {
               alt="Person 1" 
               className="w-30 h-30 object-cover rounded-md"
             />
-            <div>
-              <p >&darr; </p>
-            </div>
+          
             
           </div>
 
@@ -51,9 +49,7 @@ const Work = () => {
               alt="Person 1" 
               className="w-96 h-80 object-cover rounded-md"
             />
-            <div>
-              <p>&darr; </p>
-            </div>
+        
             
           </div>
 
@@ -64,9 +60,7 @@ const Work = () => {
               alt="Person 1" 
               className="w-96 h-80 object-cover rounded-md"
             />
-            <div>
-              <p>&darr; </p>
-            </div>
+        
             
           </div>
           <div className="text-center md:text-left">
