@@ -30,7 +30,7 @@ const Work = () => {
           {/* Right side text */}
           <div className="text-center md:text-left">
             <h3 className="text-4xl font-bold text-textcolor">
-             Get matched to the best therapist for you and Avail of our chatbot services
+             Get matched to the best therapist for you or Avail of our chatbot services
             </h3>
             <p className="mt-4 text-lg text-lightText">
             Find a licensed therapist who meets your requirements and preferences by providing answers to a few simple questions. Reach out to our Chatbot for a comfortable experience.
