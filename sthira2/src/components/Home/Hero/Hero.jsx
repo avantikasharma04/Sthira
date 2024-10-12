@@ -1,5 +1,4 @@
 import React from 'react';
-import home2 from '../../../assets/img/overall/home2.png'
 import img6 from '../Hero/img6.jpeg'
 
 function Hero() {
@@ -22,7 +21,7 @@ function Hero() {
           24 x 7 Assistance
           </p>
           <div className="mt-6">
-            <a href="#" className="inline-block bg-brightColor2 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-orange-700">
+            <a href="/Readpage" className="inline-block bg-brightColor2 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-orange-700">
               Read More
             </a>
           </div>

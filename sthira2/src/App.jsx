@@ -23,6 +23,10 @@ import Optionpage from './pages/Optionpage'
 import Genct from './pages/Careform'
 import Moodpage from './pages/Moodpage'
 import Hopelesspage from './pages/Hopelesspage'
+import Alcoholpage from './pages/Alcoholpage'
+import Mychatpage from './pages/Mychatpage'
+import Readpage from './pages/Readpage'
+import Blog1 from './pages/Blog1'
 
 const App = () => {
   return (
@@ -52,6 +56,10 @@ const App = () => {
           <Route path='/Optionpage' element={<Optionpage/>}/>
           <Route path='/Moodpage' element={<Moodpage/>}/>
           <Route path='/Hopelesspage' element={<Hopelesspage/>}/>
+          <Route path='/Alcoholpage' element={<Alcoholpage/>}/>
+          <Route path='/Mychatpage' element={<Mychatpage/>}/>
+          <Route path='/Readpage' element={<Readpage/>}/>
+          <Route path='/Blog1' element={<Blog1/>}/>
           </Routes>
       </BrowserRouter>
     </div>

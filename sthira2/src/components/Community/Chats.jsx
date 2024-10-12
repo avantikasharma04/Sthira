@@ -46,8 +46,6 @@ const ProductList = () => {
   
   ];
 
- 
-
   return (
     <div className="bg-backgroundColor2 p-6 rounded-lg shadow-lg text-center">
       <h2 className="text-4xl text-backgroundColor mb-2 pt-20">100+ People have benefitted</h2>
@@ -61,7 +59,7 @@ const ProductList = () => {
       {products.map((product, index) => (
         <ProductCard key={index} {...product} />
       ))}
-       <h2 className="text-4xl text-backgroundColor mb-2 pt-20">My Conversations</h2>
+       <h2 className="text-4xl text-backgroundColor mb-2 pt-20 cursor-pointer"><a href="/Mychatpage">My Conversations</a></h2>
 
 
 
