@@ -188,6 +188,8 @@ const Dep = () => {
     },
   ];
 
+
+
   // Handle radio button change
   const handleAnswerChange = (questionId, value) => {
     setAnswers({
@@ -214,38 +216,11 @@ const Dep = () => {
   };
 
   // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const totalScore = calculateScore();
     const depressionLevel = getDepressionLevel();
-
-    // Prepare the data to send
-    const formData = {
-      score: totalScore,
-      risk: depressionLevel,
-    };
-
-    // Send data to the backend
-    try {
-      const response = await fetch('https://backend.avantikasharma405.workers.dev/api/v1/dep', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer YOUR_JWT_TOKEN', // Add the token here
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        alert(`Your total score is ${totalScore}. Level of Depression: ${depressionLevel}`);
-      } else {
-        alert('Failed to submit the form. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('There was an error submitting the form.');
-    }
+    alert(`Your total score is ${totalScore}. Level of Depression: ${depressionLevel}`);
   };
 
   return (

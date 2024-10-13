@@ -21,7 +21,7 @@ model User {
 model AnxietyForm {
   id        Int      @id @default(autoincrement())
   userId    Int
-  score     Int
+  score     String
   risk      String?
   user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())

@@ -6,67 +6,76 @@ const Gen1 = () => {
         nationality: '',
         gender: '',
         ageGroup: '',
-        orientation: '',
-        relationshipStatus: '',
+        identity: '',
+        relationshipStatus: ''
     });
+    const [error, setError] = useState(null);
 
-    const handleChange = (e) => {
+    // Handle input changes
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value,
+            [name]: value
         });
     };
 
+    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const token = localStorage.getItem('token');
-        if (!token) {
-            alert('Please log in first');
+
+        // Validate the form (simple validation example)
+        if (!formData.nationality || !formData.gender || !formData.ageGroup) {
+            setError('Please fill in all required fields');
             return;
         }
 
         try {
-            const response = await fetch('/api/v1/user/profile', {
+            const response = await fetch('http://your-backend-api-url.com/general-form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${localStorage.getItem('token')}`, // assuming JWT token for logged-in users
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(formData)
             });
 
-            if (!response.ok) {
-                throw new Error('Form submission failed');
-            }
-
             const result = await response.json();
-            console.log('Form submitted:', result);
-        } catch (error) {
-            console.error(error);
+            if (response.ok) {
+                console.log('Form submitted successfully:', result);
+                // Redirect to next form or show success message
+            } else {
+                console.error('Error submitting form:', result);
+                setError(result.message || 'An error occurred while submitting the form');
+            }
+        } catch (err) {
+            console.error('Error:', err);
+            setError('An error occurred. Please try again.');
         }
     };
-    
+
     return (
-        
         <div className="min-h-screen bg-backgroundColor2 flex items-center justify-center">
-            <div>
-            
-            </div>
             <div className="bg-backgroundColor mt-6 mb-6 p-8 rounded-lg shadow-lg w-full max-w-md">
                 <img src={pep1} alt="Mental Health" className="w-full h-48 object-cover rounded-t-lg mb-4" />
                 <h1 className='text-4xl'>Help us know you <span className='text-backgroundColor2'>Better</span></h1>
                 <br />
-                <p className='text-justify text-green-700'> *The following questions are designed to match you to provide you better chatbot assistance or a licensed therapist  based on your therapy needs and personal preferences.</p>
+                <p className='text-justify text-green-700'>
+                    *The following questions are designed to match you to provide better chatbot assistance or a licensed therapist based on your therapy needs and personal preferences.
+                </p>
                 <br />
-                <form className="space-y-4">
+                {error && <p className="text-red-500">{error}</p>}
+                <form className="space-y-4" onSubmit={handleSubmit}>
                     <div>
                         <label className="block text-gray-700">What is Your Nationality</label>
-                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                            
+                        <select
+                            name="nationality"
+                            value={formData.nationality}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                        >
                             <option value="">-- select one --</option>
                             <option value="afghan">Afghan</option>
-                            <option value="albanian">Albanian</option>
-                            <option value="algerian">Algerian</option>
                             <option value="american">American</option>
                             <option value="andorran">Andorran</option>
                             <option value="angolan">Angolan</option>
@@ -258,20 +267,31 @@ const Gen1 = () => {
                             <option value="zimbabwean">Zimbabwean</option>
                         </select>
                     </div>
+
                     <div>
                         <label className="block text-gray-700">What is Your Gender</label>
-                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <select
+                            name="gender"
+                            value={formData.gender}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                        >
                             <option value="">Select your option</option>
                             <option value="female">Female</option>
                             <option value="male">Male</option>
-                            <option value="Trans">Trans</option>
-                            <option value="Other">Other</option>
+                            <option value="trans">Trans</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
 
                     <div>
                         <label className="block text-gray-700">What is your Age-group?</label>
-                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <select
+                            name="ageGroup"
+                            value={formData.ageGroup}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                        >
                             <option value="">Select your option</option>
                             <option value="5-10">5-10</option>
                             <option value="11-15">11-15</option>
@@ -283,31 +303,40 @@ const Gen1 = () => {
                     </div>
 
                     <div>
-                        <label className="block text-gray-700">How do you identify yourself?</label>
-                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                            <option value="">Select your option</option>
-                            <option value="Straight">Straight</option>
-                            <option value="Gay">Gay</option>
-                            <option value="Lesbian">Lesbian</option>
-                            <option value="Bisexual">Bisexual</option>
-                            <option value="Asexual">Asexual</option>
-                            <option value="Choose not to reveal">Choose not to reveal</option>
-                        </select>
-                    </div>
-                    
-                    <div>
                         <label className="block text-gray-700">What is your relationship status?</label>
-                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                            <option value="">Select your option</option>
+                        <select
+                            name="relationshipStatus"
+                            value={formData.relationshipStatus}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                        >
+                           <option value="">Select your option</option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
                             <option value="In a realtionship">In a realtionship</option>
                             <option value="Divorced">Divorced</option>
                             <option value="Choose not to reveal">Choose not to reveal</option>
-                            
                         </select>
                     </div>
-                    <button type="submit" className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-900"><a href="/Genform2">Next</a></button>
+                    <div>
+                        <label className="block text-gray-700">How do you identify yourself?</label>
+                        <select
+                            name="orientation"
+                            value={formData.orientation}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                        > <option value="">Select your option</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="In a realtionship">In a realtionship</option>
+                        <option value="Divorced">Divorced</option>
+                        <option value="Choose not to reveal">Choose not to reveal</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-900">
+                        Next
+                    </button>
                 </form>
             </div>
         </div>

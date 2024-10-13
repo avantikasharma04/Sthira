@@ -73,7 +73,7 @@ try {
 
 userRouter.post('/profile', async (c) => {
     const token = c.req.header('Authorization')?.split(' ')[1]; // Corrected to use `header` instead of `headers`
-    
+
     if (!token) {
         c.status(401);
         return c.text('Unauthorized');
@@ -113,5 +113,87 @@ userRouter.post('/profile', async (c) => {
         return c.text('Profile creation failed');
     } finally {
         await prisma.$disconnect();
+    }
+});
+
+userRouter.post('/anxietyForm', async (c) => {
+    const token = c.req.header('Authorization')?.split(' ')[1];
+    if (!token) {
+    c.status(401);
+    return c.text('Unauthorized');
+    }
+
+    let jwtPayload;
+    try {
+    jwtPayload = await verify(token, c.env.JWT_SECRET) as { id: number };
+    if (!jwtPayload.id) {
+        c.status(401);
+        return c.text('Invalid token');
+    }
+    } catch (error) {
+    c.status(401);
+    return c.text('Token verification failed');
+    }
+
+    const body = await c.req.json();
+    const prisma = new PrismaClient({
+    datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate());
+
+    try {
+    const anxietyForm = await prisma.anxietyForm.create({
+        data: {
+        userId: jwtPayload.id,
+        score: body.score,
+        risk: body.risk,
+        },
+    });
+    return c.json(anxietyForm);
+    } catch (error) {
+    c.status(500);
+    return c.text('Error creating anxiety form');
+    } finally {
+    await prisma.$disconnect();
+    }
+});
+
+userRouter.post('/depForm', async (c) => {
+    const token = c.req.header('Authorization')?.split(' ')[1];
+    if (!token) {
+    c.status(401);
+    return c.text('Unauthorized');
+    }
+
+    let jwtPayload;
+    try {
+    jwtPayload = await verify(token, c.env.JWT_SECRET) as { id: number };
+    if (!jwtPayload.id) {
+        c.status(401);
+        return c.text('Invalid token');
+    }
+    } catch (error) {
+    c.status(401);
+    return c.text('Token verification failed');
+    }
+
+    const body = await c.req.json();
+    const prisma = new PrismaClient({
+    datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate());
+
+    try {
+    const depForm = await prisma.depForm.create({
+        data: {
+        userId: jwtPayload.id,
+        score: body.score,
+        risk: body.risk,
+        },
+    });
+    return c.json(depForm);
+    } catch (error) {
+    c.status(500);
+    return c.text('Error creating depression form');
+    } finally {
+    await prisma.$disconnect();
     }
 });
