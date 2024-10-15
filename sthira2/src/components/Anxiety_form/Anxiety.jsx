@@ -1,36 +1,58 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { BACKEND_URL } from '../../config';
+import { useAuth } from '../../AuthContext';
 import Anxiety from './anxiety.png';
 
 const BodyImage = () => {
-  // State to store the answers
   const [answers, setAnswers] = useState({
     1: 0, 2: 0, 3: 0, 4: 0, 5: 0,
     6: 0, 7: 0, 8: 0, 9: 0, 10: 0,
     11: 0, 12: 0, 13: 0, 14: 0, 15: 0,
     16: 0, 17: 0
   });
+  const { token } = useAuth();
 
-  // Function to update answers
   const handleAnswerChange = (question, value) => {
-    setAnswers({
-      ...answers,
+    setAnswers((prev) => ({
+      ...prev,
       [question]: parseInt(value, 10),
-    });
+    }));
   };
 
-  // Calculate the total score
   const calculateScore = () => {
-    const totalScore = Object.values(answers).reduce((sum, value) => sum + value, 0);
-    return totalScore;
+    return Object.values(answers).reduce((sum, value) => sum + value, 0);
   };
 
-  // Determine risk level based on score
   const getRiskLevel = () => {
     const score = calculateScore();
     if (score <= 21) return 'Low Anxiety';
     if (score <= 35) return 'Moderate Anxiety';
     return 'Severe Anxiety';
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const totalScore = calculateScore();
+    const anxietyLevel = getRiskLevel();
+
+    try {
+      await axios.post(
+        `${BACKEND_URL}/api/v1/user/anxiety`, 
+        { totalScore, anxietyLevel },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      alert(`Your total score is ${totalScore}. Risk Level: ${anxietyLevel}`);
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+      alert('There was an error submitting your form. Please try again.');
+    }
+  };
+
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">

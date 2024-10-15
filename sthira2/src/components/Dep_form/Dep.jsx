@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios'
+import { BACKEND_URL } from '../../config'
 
 const Dep = () => {
   // State to store the answers
@@ -215,13 +217,30 @@ const Dep = () => {
     return 'Extreme depression';
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const totalScore = calculateScore();
-    const depressionLevel = getDepressionLevel();
-    alert(`Your total score is ${totalScore}. Level of Depression: ${depressionLevel}`);
-  };
+ // Handle form submission
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const score = calculateScore();
+  const risk = getDepressionLevel();
+
+  const token = localStorage.getItem('token');
+
+  try {
+      await axios.post(`${BACKEND_URL}/api/v1/user/depression`, 
+          { score, risk }, 
+          {
+              headers: {
+                  Authorization: `Bearer ${token}`,
+              },
+          }
+      );
+      alert(`Your total score is ${score}. Level of Depression: ${risk}`);
+  } catch (error) {
+      console.error('Error submitting the form:', error);
+      alert('There was an error submitting your form. Please try again.');
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center pt-20">

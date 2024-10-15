@@ -11,37 +11,49 @@ export const userRouter = new Hono<{
     }
 }>();
 
+async function verifyToken(c: any): Promise<{ id: number } | null> {
+    const token = c.req.header('Authorization')?.split(' ')[1];
+    if (!token) {
+        c.status(401);
+        c.text('Unauthorized');
+        return null;
+    }
+
+    try {
+        const jwtPayload = await verify(token, c.env.JWT_SECRET) as { id: number };
+        return jwtPayload;
+    } catch (error) {
+        c.status(401);
+        c.text('Invalid token');
+        return null;
+    }
+}
 userRouter.post('/signup', async (c) => {
     const body = await c.req.json();
-    const {success} = signupInput.safeParse(body);
+    const { success } = signupInput.safeParse(body);
     if (!success) {
         c.status(411);
-        return c.json({
-            message: "Inputs are not correct"
-        })
+        return c.json({ message: "Inputs are not correct" });
     }
-    const prisma = new PrismaClient({
-    datasourceUrl: c.env.DATABASE_URL,
-}).$extends(withAccelerate())
 
-try {
-    const user = await prisma.user.create({
-    data: {
-        username: body.username,
-        password: body.password,
-        name: body.name
+    const prisma = new PrismaClient({ datasourceUrl: c.env.DATABASE_URL }).$extends(withAccelerate());
+
+    try {
+        const user = await prisma.user.create({
+            data: {
+                username: body.username,
+                password: body.password,
+                name: body.name,
+            },
+        });
+        const jwt = await sign({ id: user.id }, c.env.JWT_SECRET);
+        return c.text(jwt);
+    } catch (e) {
+        c.status(411);
+        return c.text('Invalid');
     }
-    })
-    const jwt = await sign({
-    id: user.id
-    }, c.env.JWT_SECRET);
+});
 
-    return c.text(jwt)
-} catch(e) {
-    c.status(411);
-    return c.text('Invalid')
-}
-})
 
 userRouter.post('/signin', async (c) => {
     const body = await c.req.json();
@@ -72,29 +84,11 @@ try {
 })
 
 userRouter.post('/profile', async (c) => {
-    const token = c.req.header('Authorization')?.split(' ')[1]; // Corrected to use `header` instead of `headers`
-
-    if (!token) {
-        c.status(401);
-        return c.text('Unauthorized');
-    }
-
-    let jwtPayload;
-    try {
-        jwtPayload = await verify(token, c.env.JWT_SECRET) as { id: number }; // Ensure verify returns a Promise and type cast as needed
-        if (!jwtPayload.id) {
-            c.status(401);
-            return c.text('Invalid token');
-        }
-    } catch (error) {
-        c.status(401);
-        return c.text('Token verification failed');
-    }
+    const jwtPayload = await verifyToken(c);
+    if (!jwtPayload) return; // Exit if the token is invalid or missing
 
     const body = await c.req.json();
-    const prisma = new PrismaClient({
-        datasourceUrl: c.env.DATABASE_URL,
-    }).$extends(withAccelerate());
+    const prisma = new PrismaClient({ datasourceUrl: c.env.DATABASE_URL }).$extends(withAccelerate());
 
     try {
         const profile = await prisma.profile.create({
@@ -115,85 +109,50 @@ userRouter.post('/profile', async (c) => {
         await prisma.$disconnect();
     }
 });
-
-userRouter.post('/anxietyForm', async (c) => {
-    const token = c.req.header('Authorization')?.split(' ')[1];
-    if (!token) {
-    c.status(401);
-    return c.text('Unauthorized');
-    }
-
-    let jwtPayload;
-    try {
-    jwtPayload = await verify(token, c.env.JWT_SECRET) as { id: number };
-    if (!jwtPayload.id) {
-        c.status(401);
-        return c.text('Invalid token');
-    }
-    } catch (error) {
-    c.status(401);
-    return c.text('Token verification failed');
-    }
+userRouter.post('/anxiety', async (c) => {
+    const jwtPayload = await verifyToken(c);
+    if (!jwtPayload) return;
 
     const body = await c.req.json();
-    const prisma = new PrismaClient({
-    datasourceUrl: c.env.DATABASE_URL,
-    }).$extends(withAccelerate());
+    const prisma = new PrismaClient({ datasourceUrl: c.env.DATABASE_URL }).$extends(withAccelerate());
 
     try {
-    const anxietyForm = await prisma.anxietyForm.create({
-        data: {
-        userId: jwtPayload.id,
-        score: body.score,
-        risk: body.risk,
-        },
-    });
-    return c.json(anxietyForm);
+        const anxietyForm = await prisma.anxietyForm.create({
+            data: {
+                userId: jwtPayload.id,
+                score: body.totalScore,
+                risk: body.anxietyLevel,
+            },
+        });
+        return c.json(anxietyForm);
     } catch (error) {
-    c.status(500);
-    return c.text('Error creating anxiety form');
+        c.status(500);
+        return c.text('Anxiety form submission failed');
     } finally {
-    await prisma.$disconnect();
+        await prisma.$disconnect();
     }
 });
 
-userRouter.post('/depForm', async (c) => {
-    const token = c.req.header('Authorization')?.split(' ')[1];
-    if (!token) {
-    c.status(401);
-    return c.text('Unauthorized');
-    }
-
-    let jwtPayload;
-    try {
-    jwtPayload = await verify(token, c.env.JWT_SECRET) as { id: number };
-    if (!jwtPayload.id) {
-        c.status(401);
-        return c.text('Invalid token');
-    }
-    } catch (error) {
-    c.status(401);
-    return c.text('Token verification failed');
-    }
+userRouter.post('/depression', async (c) => {
+    const jwtPayload = await verifyToken(c);
+    if (!jwtPayload) return; // Exit if the token is invalid or missing
 
     const body = await c.req.json();
-    const prisma = new PrismaClient({
-    datasourceUrl: c.env.DATABASE_URL,
-    }).$extends(withAccelerate());
+    const prisma = new PrismaClient({ datasourceUrl: c.env.DATABASE_URL }).$extends(withAccelerate());
 
     try {
-    const depForm = await prisma.depForm.create({
-        data: {
-        userId: jwtPayload.id,
-        score: body.score,
-        risk: body.risk,
-        },
-    });
-    return c.json(depForm);
+        const depressionForm = await prisma.depForm.create({
+            data: {
+                userId: jwtPayload.id,
+                score: body.score,
+                risk: body.risk,
+            },
+        });
+        return c.json(depressionForm);
     } catch (error) {
-    c.status(500);
-    return c.text('Error creating depression form');
+        c.status(500);
+        return c.text('Depression form submission failed');
     } finally {
-    await prisma.$disconnect();
+        await prisma.$disconnect();
     }
 });
