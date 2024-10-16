@@ -27,24 +27,26 @@ import Alcoholpage from './pages/Alcoholpage'
 import Mychatpage from './pages/Mychatpage'
 import Readpage from './pages/Readpage'
 import Blog1 from './pages/Blog1'
-import Blog2 from './pages/Blog2'
-import Blog3 from './pages/Blog3'
+import PrivateRoute from './PrivateRoute'
+import { AuthProvider } from './AuthContext'
 
 const App = () => {
   return (
     <div>
+      
       <BrowserRouter>
+      <AuthProvider>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/Disorderpage' element={<Disorderpage/>}/>
+          <Route path="/Disorderpage" element={<PrivateRoute element={<Disorderpage />} />} />
           <Route path='/Appear' element={<Appear/>}/>
           <Route path='/community' element={<Community/>}/>
           <Route path='/account' element={<Account/>}/>
           <Route path='/Chatbot' element={<Chatbot/>}/>
           <Route path='/Login' element={<Login/>}/>
           <Route path='/Register' element={<Register/>}/>
-          <Route path='/Anx' element={<Anx/>}/>
-          <Route path='/BecksDep' element={<BecksDep/>}/>
+          <Route path="/Anx" element={<PrivateRoute element={<Anx />} />} />
+          <Route path="/BecksDep" element={<PrivateRoute element={<BecksDep />} />} />
           <Route path='/Eating' element={<Eating/>}/>
           <Route path='/SleepPage' element={<SleepPage/>}/>
           <Route path='/ImagePage' element={<ImagePage/>}/>
@@ -65,7 +67,9 @@ const App = () => {
           <Route path='/Blog2' element={<Blog2/>}/>
           <Route path='/Blog3' element={<Blog3/>}/>
           </Routes>
+          </AuthProvider>
       </BrowserRouter>
+     
     </div>
   )
 }
