@@ -27,6 +27,8 @@ import Alcoholpage from './pages/Alcoholpage'
 import Mychatpage from './pages/Mychatpage'
 import Readpage from './pages/Readpage'
 import Blog1 from './pages/Blog1'
+import Blog2 from './pages/Blog2'
+import Blog3 from './pages/Blog3'
 
 const App = () => {
   return (
@@ -60,6 +62,8 @@ const App = () => {
           <Route path='/Mychatpage' element={<Mychatpage/>}/>
           <Route path='/Readpage' element={<Readpage/>}/>
           <Route path='/Blog1' element={<Blog1/>}/>
+          <Route path='/Blog2' element={<Blog2/>}/>
+          <Route path='/Blog3' element={<Blog3/>}/>
           </Routes>
       </BrowserRouter>
     </div>
