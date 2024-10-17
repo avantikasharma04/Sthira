@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios'
+import { BACKEND_URL } from '../../config'
 
 const Eatingdis = () => {
     const [answers, setAnswers] = useState({});
@@ -26,14 +28,28 @@ const Eatingdis = () => {
         return 'Very satisfied';
     };
 
-    // Handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const totalScore = calculateScore();
-        const satisfactionLevel = getSatisfactionLevel();
-        alert(`Your total score is ${totalScore}. Satisfaction level: ${satisfactionLevel}`);
+        const score = calculateScore();
+        const satisfaction = getSatisfactionLevel();
+    
+        const token = localStorage.getItem('token');
+    
+        try {
+            await axios.post(`${BACKEND_URL}/api/v1/user/bodyimage`, 
+                { score, satisfaction }, 
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+            alert(`Your total score is ${score}. Satisfaction level: ${satisfaction}`);
+        } catch (error) {
+            console.error('Error submitting the form:', error);
+            alert('There was an error submitting your form. Please try again.');
+        }
     };
-
     return (
         <div className="max-w-2xl mx-auto p-4 pt-20">
             <h1 className="text-2xl font-bold mb-4">Body Image Satisfaction Questionnaire</h1>

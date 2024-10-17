@@ -16,16 +16,10 @@ model User {
   anxietyForms AnxietyForm[]
   depForms DepForm[]
   profiles Profile[]
+  hopelessnesss Hopelessness[]
+  bodyimageforms bodyImageForm[]
 }
 
-model AnxietyForm {
-  id        Int      @id @default(autoincrement())
-  userId    Int
-  score     String
-  risk      String?
-  user      User     @relation(fields: [userId], references: [id])
-  createdAt DateTime @default(now())
-}
 
 model DepForm {
   id        Int      @id @default(autoincrement())
@@ -45,4 +39,31 @@ model Profile {
   orientation        String
   relationshipStatus String
   user               User   @relation(fields: [userId], references: [id])
+}
+
+model AnxietyForm {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  score     Int
+  risk      String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Hopelessness {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  user       User     @relation(fields: [userId], references: [id])
+  score      Int
+  riskLevel  String
+  createdAt  DateTime @default(now())
+}
+
+model bodyImageForm {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  user         User     @relation(fields: [userId], references: [id])
+  score        Int
+  satisfaction String
+  createdAt    DateTime @default(now())
 }
