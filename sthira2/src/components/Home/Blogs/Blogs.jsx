@@ -19,11 +19,11 @@ const Blogs = () => {
           <div className="bg-white p-4 rounded-lg shadow-md text-center  border-2 hover:bg-hover cursor-pointer">
             <img src={B2} alt="Blog 2" className="w-full h-48 object-cover mb-4 rounded-lg"/>
             <h3 className="text-xl font-semibold text-lightText">"Understanding the Different Types of Mental Health Disorders: A Guide to Early Signs and Treatment"
-            &rarr;</h3>
+           <a href="/Blog2">&rarr;</a> </h3>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md text-center  border-2 hover:bg-hover cursor-pointer">
             <img src={B3} alt="Blog 3" className="w-full h-48 object-cover mb-4 rounded-lg"/>
-            <h3 className="text-xl font-semibold text-lightText">"How Technology is Transforming Mental Health Support: The Rise of AI and Mental Health Apps" &rarr;</h3>
+            <h3 className="text-xl font-semibold text-lightText">"How Technology is Transforming Mental Health Support: The Rise of AI and Mental Health Apps" <a href="/Blog3">&rarr;</a> </h3>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import yog from '../Mychat/yog.jpeg'
 import game from '../Mychat/game.jpeg'
 import meditation from '../Mychat/meditation.jpeg'
+import ReactPlayer from 'react-player';
 
 const Chats = () => {
   return (
@@ -54,11 +55,11 @@ const Chats = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-4 rounded-lg shadow-md text-center border-2 hover:bg-hover cursor-pointer">
             <img src={game} alt="Blog 1" className="w-full h-48 object-cover mb-4 rounded-lg"/>
-            <h3 className="text-xl font-semibold text-lightText">Mental health Quizzes &rarr;</h3>
+            <h3 className="text-xl font-semibold text-lightText"> Mental health Quizzes  &rarr;</h3>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md text-center  border-2 hover:bg-hover cursor-pointer">
             <img src={meditation} alt="Blog 2" className="w-full h-48 object-cover mb-4 rounded-lg"/>
-            <h3 className="text-xl font-semibold text-lightText">Meditation &rarr;</h3>
+            <h3 className="text-xl font-semibold text-lightText"> <a href="/Videopage1">Meditation</a> &rarr;</h3>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md text-center  border-2 hover:bg-hover cursor-pointer">
             <img src={yog} alt="Blog 3" className="w-full h-48 object-cover mb-4 rounded-lg"/>

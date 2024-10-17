@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Article3 from '../components/Blogno3/Article3'
+import Video1 from '../components/Videocom/Video1'
 
-const Blog3 = () => {
+const Videopage1 = () => {
   return (
     <div>
       <Navbar/>
-      <Article3/>
+      <Video1/>
     </div>
   )
 }
 
-export default Blog3
+export default Videopage1

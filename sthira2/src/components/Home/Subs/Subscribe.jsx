@@ -14,7 +14,7 @@ const Subscribe = () => {
             Therapy is one of the most meaningful gifts you can give to your friends and loved ones.
           </p>
           <button className="mt-6 bg-backgroundColor2 hover:bg-red-700 text-white px-4 py-2 rounded-lg  transition duration-300">
-            Gift a membership
+            <a href="/Subpage">Gift a membership</a>
           </button>
         </div>
 
