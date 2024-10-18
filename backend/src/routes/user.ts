@@ -110,18 +110,18 @@ userRouter.post('/profile', async (c) => {
     }
 });
 userRouter.post('/anxiety', async (c) => {
-    const jwtPayload = await verifyToken(c);
+    const jwtPayload = await verifyToken(c);  // Verify JWT token
     if (!jwtPayload) return;
-
     const body = await c.req.json();
     const prisma = new PrismaClient({ datasourceUrl: c.env.DATABASE_URL }).$extends(withAccelerate());
 
     try {
+        // Store form data in the AnxietyForm table
         const anxietyForm = await prisma.anxietyForm.create({
             data: {
                 userId: jwtPayload.id,
-                score: body.totalScore,
-                risk: body.anxietyLevel,
+                score: body.score,
+                risk: body.risk,
             },
         });
         return c.json(anxietyForm);
@@ -135,8 +135,7 @@ userRouter.post('/anxiety', async (c) => {
 
 userRouter.post('/depression', async (c) => {
     const jwtPayload = await verifyToken(c);
-    if (!jwtPayload) return; // Exit if the token is invalid or missing
-
+    if (!jwtPayload) return;
     const body = await c.req.json();
     const prisma = new PrismaClient({ datasourceUrl: c.env.DATABASE_URL }).$extends(withAccelerate());
 
@@ -152,6 +151,57 @@ userRouter.post('/depression', async (c) => {
     } catch (error) {
         c.status(500);
         return c.text('Depression form submission failed');
+    } finally {
+        await prisma.$disconnect();
+    }
+});
+
+userRouter.post('/hopelessness', async (c) => {
+    const jwtPayload = await verifyToken(c); // Verify the JWT token to authenticate the user
+    if (!jwtPayload) return; // If the token is invalid, do nothing
+
+    const body = await c.req.json(); // Parse the request body
+    const prisma = new PrismaClient({ datasourceUrl: c.env.DATABASE_URL }).$extends(withAccelerate());
+
+    try {
+        // Create a new hopelessness form record in the database
+        const hopelessnessForm = await prisma.hopelessness.create({
+            data: {
+                userId: jwtPayload.id,  
+                score: body.score,      
+                riskLevel: body.risk,   // Store the risk designation (None, Mild, Moderate, Severe)
+            },
+        });
+
+        // Return the created hopelessness form record as a JSON response
+        return c.json(hopelessnessForm);
+    } catch (error) {
+        c.status(500);  // Set the status code to 500 (internal server error)
+        return c.text('Hopelessness form submission failed');  // Return an error message
+    } finally {
+        await prisma.$disconnect();  // Disconnect the Prisma client
+    }
+});
+
+userRouter.post('/bodyimage', async (c) => {
+    const jwtPayload = await verifyToken(c);
+    if (!jwtPayload) return;
+
+    const body = await c.req.json();
+    const prisma = new PrismaClient({ datasourceUrl: c.env.DATABASE_URL }).$extends(withAccelerate());
+
+    try {
+        const bodyImageForm = await prisma.bodyImageForm.create({
+            data: {
+                userId: jwtPayload.id,
+                score: body.score,
+                satisfaction: body.satisfaction,
+            },
+        });
+        return c.json(bodyImageForm);
+    } catch (error) {
+        c.status(500);
+        return c.text('Body image satisfaction form submission failed');
     } finally {
         await prisma.$disconnect();
     }

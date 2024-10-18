@@ -13,17 +13,20 @@ const BodyImage = () => {
   });
   const { token } = useAuth();
 
+  // Handle radio button change
   const handleAnswerChange = (question, value) => {
     setAnswers((prev) => ({
       ...prev,
-      [question]: parseInt(value, 10),
+      [question]: parseInt(value, 10),  // Convert value to integer
     }));
   };
 
+  // Calculate total score
   const calculateScore = () => {
     return Object.values(answers).reduce((sum, value) => sum + value, 0);
   };
 
+  // Determine risk level based on score
   const getRiskLevel = () => {
     const score = calculateScore();
     if (score <= 21) return 'Low Anxiety';
@@ -31,28 +34,28 @@ const BodyImage = () => {
     return 'Severe Anxiety';
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const totalScore = calculateScore();
-    const anxietyLevel = getRiskLevel();
+    const score = calculateScore();
+    const risk = getRiskLevel();
 
     try {
       await axios.post(
         `${BACKEND_URL}/api/v1/user/anxiety`, 
-        { totalScore, anxietyLevel },
+        { score, risk },  // Send score and risk level to backend
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token}`,  // Include authorization token
           },
         }
       );
-      alert(`Your total score is ${totalScore}. Risk Level: ${anxietyLevel}`);
+      alert(`Your total score is ${score}. Risk Level: ${risk}`);
     } catch (error) {
       console.error('Error submitting the form:', error);
       alert('There was an error submitting your form. Please try again.');
     }
   };
-
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
@@ -114,18 +117,19 @@ const BodyImage = () => {
           </div>
         ))}
 
-        {/* Calculate Button */}
-        <div className="mt-8">
+       {/* Submit Button */}
+       <div className="mt-8">
           <button
-            onClick={() => alert(`Your total score is ${calculateScore()}. Risk Level: ${getRiskLevel()}`)}
+            onClick={handleSubmit}
             className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg"
           >
-            Calculate Score
+            Submit
           </button>
         </div>
       </div>
     </div>
   );
 };
+
 
 export default BodyImage;

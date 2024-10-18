@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Alcohol= () => {
+const Alcohol = () => {
   const [formValues, setFormValues] = useState({
     q1: "",
     q2: "",
@@ -13,6 +13,7 @@ const Alcohol= () => {
     q9: "",
     q10: "",
   });
+  const [resultMessage, setResultMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,6 +21,20 @@ const Alcohol= () => {
       ...formValues,
       [name]: value,
     });
+  };
+
+  const getRiskLevel = (totalScore) => {
+    if (totalScore >= 20) return "Possible alcohol dependence";
+    if (totalScore >= 16) return "Harmful drinking";
+    if (totalScore >= 8) return "Hazardous drinking";
+    return "Low risk";
+  };
+
+  const handleSubmit = () => {
+    const totalScore = Object.values(formValues).reduce((acc, value) => acc + parseInt(value || 0), 0);
+    const riskLevel = getRiskLevel(totalScore);
+    setResultMessage(`Your total AUDIT score is ${totalScore}. Risk Level: ${riskLevel}.`);
+    // Further actions can be added here, such as sending the form data to the backend
   };
 
   return (
@@ -223,6 +238,7 @@ const Alcohol= () => {
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
+            onClick={handleSubmit}
           >
             Submit
           </button>
