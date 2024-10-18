@@ -55,7 +55,7 @@ const Gen1 = () => {
     };
 
     return (
-        <div className="min-h-screen bg-backgroundColor2 flex items-center justify-center">
+        <div className="min-h-screen bg-backgroundColor2 flex items-center justify-center pt-20">
             <div className="bg-backgroundColor mt-6 mb-6 p-8 rounded-lg shadow-lg w-full max-w-md">
                 <img src={pep1} alt="Mental Health" className="w-full h-48 object-cover rounded-t-lg mb-4" />
                 <h1 className='text-4xl'>Help us know you <span className='text-backgroundColor2'>Better</span></h1>
@@ -335,7 +335,7 @@ const Gen1 = () => {
                     </div>
                     
                     <button type="submit" className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-900">
-                        Next
+                      <a href="/Genform2">Next</a>  
                     </button>
                 </form>
             </div>

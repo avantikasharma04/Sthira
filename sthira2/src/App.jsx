@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Home from './pages/Home'
 import Disorderpage from './pages/Disorderpage'
@@ -33,6 +34,7 @@ import PrivateRoute from './PrivateRoute'
 import { AuthProvider } from './AuthContext'
 import Subpage from './pages/Subpage'
 import Videopage1 from './pages/videopage1'
+import Dash from './pages/Dash'
 
 const App = () => {
   return (
@@ -72,6 +74,7 @@ const App = () => {
           <Route path='/Blog3' element={<Blog3/>}/>
           <Route path='/Subpage' element={<Subpage/>}/>
           <Route path='/Videopage1' element={<Videopage1/>}/>
+          <Route path='/Dash' element={<Dash/>}/>
           </Routes>
           </AuthProvider>
       </BrowserRouter>
