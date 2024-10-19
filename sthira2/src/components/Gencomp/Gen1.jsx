@@ -334,8 +334,195 @@ const Gen1 = () => {
                         </select>
                     </div>
                     
+                    <div>
+                        <label className="block text-gray-700">How important is religion in your life</label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Significantly important">Significantly important</option>
+                            <option value="Important">Important</option>
+                            <option value="Not Important">Not Important</option>
+                            <option value="Depends on the situation">Depends on the situation</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">Do you consider yourself spiritual?</label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">Have you ever tried therapy before?</label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">What led you to consider therapy today?</label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="I felt like it">I felt like it</option>
+                            <option value="I feel depressed">I feel depressed</option>
+                            <option value="I still don't know">I still don't know</option>
+                            <option value="I need someone to talk too">I need someone to talk too</option>
+                            <option value="I don't feel good">I don't feel good</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">What are your expectations from your therapist? A therapist who...</label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Straight-forward">Straight-forward</option>
+                            <option value="Gentle">Gentle</option>
+                            <option value="Flexible">Flexible</option>
+                            <option value="I am okay with anything">I am okay with anything</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label className="block text-gray-700">How would you rate your physical health?</label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Bad">Bad</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">How would you rate your eating habits?</label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Bad">Bad</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">Are you currently experiencing overwhelming sadness, grief, or depression?
+                        </label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Bad">Bad</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">Little interest or pleasure in doing things.
+                        </label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Agreee">Agree</option>
+                            <option value="Not sure">Not sure</option>
+                            <option value="Disagree">Disagree</option>
+                            <option value="Depends on the situation">Depends on the situation</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">Little interest or pleasure in doing things.
+                        </label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Agreee">Agree</option>
+                            <option value="Not sure">Not sure</option>
+                            <option value="Disagree">Disagree</option>
+                            <option value="Depends on the situation">Depends on the situation</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700 text-justify">Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual.
+
+                        </label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Agreee">Agree</option>
+                            <option value="Not sure">Not sure</option>
+                            <option value="Disagree">Disagree</option>
+                            <option value="Depends on the situation">Depends on the situation</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">Feeling down, depressed or hopeless.</label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Most of the time">Most of the time</option>
+                            <option value="Not sure">Not sure</option>
+                            <option value="Sometimes">Sometimes</option>
+                            <option value="Never">Never</option>
+                            <option value="Depends on the situation">Depends on the situation</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">Trouble falling asleep, staying asleep, or sleeping too much.
+                        </label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Most of the time">Most of the time</option>
+                            <option value="Not sure">Not sure</option>
+                            <option value="Sometimes">Sometimes</option>
+                            <option value="Never">Never</option>
+                            <option value="Depends on the situation">Depends on the situation</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">Feeling tired or having little energy.
+                        </label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Most of the time">Most of the time</option>
+                            <option value="Not sure">Not sure</option>
+                            <option value="Sometimes">Sometimes</option>
+                            <option value="Never">Never</option>
+                            <option value="Depends on the situation">Depends on the situation</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700">Poor appetite or overeating.
+                        </label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Most of the time">Most of the time</option>
+                            <option value="Not sure">Not sure</option>
+                            <option value="Sometimes">Sometimes</option>
+                            <option value="Never">Never</option>
+                            <option value="Depends on the situation">Depends on the situation</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-gray-700 text-justify">Feeling bad about yourself - or that you are a failure or have let yourself or your family down.
+                        </label>
+                        <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select your option</option>
+                            <option value="Most of the time">Most of the time</option>
+                            <option value="Not sure">Not sure</option>
+                            <option value="Sometimes">Sometimes</option>
+                            <option value="Never">Never</option>
+                            <option value="Depends on the situation">Depends on the situation</option>
+                        </select>
+                    </div>
+
                     <button type="submit" className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-900">
-                      <a href="/Genform2">Next</a>  
+                      <a href="/">Submit</a>  
                     </button>
                 </form>
             </div>

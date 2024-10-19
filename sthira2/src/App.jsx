@@ -18,8 +18,6 @@ import Financial from './pages/Financial'
 import Notification from './pages/Notification'
 import Appear from './pages/Appear'
 import Genform from './pages/Genform'
-import Genform2 from './pages/Genform2'
-import Genform3 from './pages/Genform3'
 import Optionpage from './pages/Optionpage'
 import Genct from './pages/Careform'
 import Moodpage from './pages/Moodpage'
@@ -35,6 +33,8 @@ import { AuthProvider } from './AuthContext'
 import Subpage from './pages/Subpage'
 import Videopage1 from './pages/videopage1'
 import Dash from './pages/Dash'
+import Videopage2 from './pages/Videopage2'
+import Videopage3 from './pages/Videopage3'
 
 const App = () => {
   return (
@@ -60,8 +60,6 @@ const App = () => {
           <Route path='/Financial' element={<Financial/>}/>
           <Route path='/Notification' element={<Notification/>}/>
           <Route path='/Genform' element={<Genform/>}/>
-          <Route path='/Genform2' element={<Genform2/>}/>
-          <Route path='/Genform3' element={<Genform3/>}/>
           <Route path='/Genct' element={<Genct/>}/>
           <Route path='/Optionpage' element={<Optionpage/>}/>
           <Route path='/Moodpage' element={<Moodpage/>}/>
@@ -75,6 +73,8 @@ const App = () => {
           <Route path='/Subpage' element={<Subpage/>}/>
           <Route path='/Videopage1' element={<Videopage1/>}/>
           <Route path='/Dash' element={<Dash/>}/>
+          <Route path='/Videopage2' element={<Videopage2/>}/>
+          <Route path='/Videopage3' element={<Videopage3/>}/>
           </Routes>
           </AuthProvider>
       </BrowserRouter>

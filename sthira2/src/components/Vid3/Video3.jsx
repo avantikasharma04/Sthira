@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Video1 = () => {
+const Video3 = () => {
   return (
     <div className="p-6 bg-gray-100 min-h-screen pt-20 ">
       <div className="container mx-auto">
@@ -14,7 +14,7 @@ const Video1 = () => {
               <iframe 
                 width="100%" 
                 height="200" 
-                src="https://www.youtube.com/embed/QzA3XyPjcVg?si=YkpRJ7EwwGZx_REN" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen
@@ -31,7 +31,7 @@ const Video1 = () => {
               <iframe 
                 width="100%" 
                 height="200" 
-                src="https://www.youtube.com/embed/bLpHR0xL_Xo?si=wom2P71LWStKk4lJ" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen
@@ -79,4 +79,4 @@ const Video1 = () => {
   );
 };
 
-export default Video1;
+export default Video3;

@@ -4,7 +4,12 @@ import game from '../Mychat/game.jpeg'
 import meditation from '../Mychat/meditation.jpeg'
 import ReactPlayer from 'react-player';
 
+
+
 const Chats = () => {
+  const handleClick = () => {
+    alert('The Chat has been Discarded!');
+  }
   return (
     <div className="p-6 pt-20">
       <div className="container mx-auto space-y-6">
@@ -12,12 +17,14 @@ const Chats = () => {
         <div className="bg-backgroundColor p-4 rounded-md shadow-md">
           <h2 className="text-xl font-bold">Hi, Your Current Teen Chatbot is still on </h2>
           <p>If you want to continue this chat Kindly click on 'Continue Chat' or else click on 'Discard'</p>
-          <button className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded m-6">
+          <button  className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded m-6">
         <a href="/Botpage">Continue Chat</a>
       </button>
 
-      <button className="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 rounded">
-        <a href="">Discard</a>
+      <button 
+      onClick={handleClick}
+      className="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 rounded">
+        <a href="/">Discard</a>
       </button>
         </div>
         
@@ -55,7 +62,7 @@ const Chats = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-4 rounded-lg shadow-md text-center border-2 hover:bg-hover cursor-pointer">
             <img src={game} alt="Blog 1" className="w-full h-48 object-cover mb-4 rounded-lg"/>
-            <h3 className="text-xl font-semibold text-lightText"> Mental health Quizzes  &rarr;</h3>
+            <h3 className="text-xl font-semibold text-lightText"><a href="/Videopage2">Mental health Quizzes</a>   &rarr;</h3>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md text-center  border-2 hover:bg-hover cursor-pointer">
             <img src={meditation} alt="Blog 2" className="w-full h-48 object-cover mb-4 rounded-lg"/>
@@ -63,7 +70,8 @@ const Chats = () => {
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md text-center  border-2 hover:bg-hover cursor-pointer">
             <img src={yog} alt="Blog 3" className="w-full h-48 object-cover mb-4 rounded-lg"/>
-            <h3 className="text-xl font-semibold text-lightText">Yoga &rarr;</h3>
+            <h3 className="text-xl font-semibold text-lightText">
+              <a href="/Videopage3">Yoga</a> &rarr;</h3>
           </div>
         </div>
       </div>
