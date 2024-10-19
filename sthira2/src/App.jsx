@@ -35,6 +35,7 @@ import Videopage1 from './pages/videopage1'
 import Dash from './pages/Dash'
 import Videopage2 from './pages/Videopage2'
 import Videopage3 from './pages/Videopage3'
+import Emergencypage from './pages/Emergencypage'
 
 const App = () => {
   return (
@@ -75,6 +76,7 @@ const App = () => {
           <Route path='/Dash' element={<Dash/>}/>
           <Route path='/Videopage2' element={<Videopage2/>}/>
           <Route path='/Videopage3' element={<Videopage3/>}/>
+          <Route path='/Emergencypage' element={<Emergencypage/>}/>
           </Routes>
           </AuthProvider>
       </BrowserRouter>

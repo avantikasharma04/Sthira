@@ -37,7 +37,7 @@ const Navbar = () => {
                         <Link to="/login" className='hover:text-hover text-white transition duration-200 ease-linear'>Login</Link>
                     )}
 
-                    <button className='hidden lg:flex border-2 border-green-600 bg-green-600 text-lg px-4 rounded-md hover:bg-green-900 transition duration-200 ease-linear text-white hover:text-hover'>Emergency</button>
+                    <button className='hidden lg:flex border-2 border-green-600 bg-green-600 text-lg px-4 rounded-md hover:bg-green-900 transition duration-200 ease-linear text-white hover:text-hover'><a href="/Emergencypage">Emergency</a></button>
                 </div>
                 <div className='md:hidden flex items-center'>
                     {menu ? (
@@ -59,7 +59,7 @@ const Navbar = () => {
                 )}
 
                 <div>
-                    <button className='hover:bg-backgroundColor2 border-2 border-backgroundColor2 py-1 px-4 rounded-md'>Emergency</button>
+                    <button className='hover:bg-backgroundColor2 border-2 border-backgroundColor2 py-1 px-4 rounded-md'><a href="/Emergencypage">Emergency</a></button>
                 </div>
             </div>
         </header>
