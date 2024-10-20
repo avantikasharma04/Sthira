@@ -5,7 +5,6 @@ import About from '../components/Home/About/About'
 import Review from '../components/Home/Review/Review'
 import Footer from '../components/Home/Footer/Footer'
 import Blogs from '../components/Home/Blogs/Blogs'
-import Subscribe from '../components/Home/Subs/Subscribe'
 import FAQ from '../components/Home/questions/FAQ'
 import Work from '../components/Home/working/Work'
 
@@ -18,7 +17,6 @@ const Home = () => {
    <Work/>
    <Review/>
    <Blogs/>
-   <Subscribe/>
    <FAQ/>
    <Footer/>
     </>

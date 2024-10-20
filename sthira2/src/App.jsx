@@ -30,7 +30,6 @@ import Blog2 from './pages/Blog2'
 import Blog3 from './pages/Blog3'
 import PrivateRoute from './PrivateRoute'
 import { AuthProvider } from './AuthContext'
-import Subpage from './pages/Subpage'
 import Videopage1 from './pages/videopage1'
 import Dash from './pages/Dash'
 import Videopage2 from './pages/Videopage2'
@@ -71,7 +70,6 @@ const App = () => {
           <Route path='/Blog1' element={<Blog1/>}/>
           <Route path='/Blog2' element={<Blog2/>}/>
           <Route path='/Blog3' element={<Blog3/>}/>
-          <Route path='/Subpage' element={<Subpage/>}/>
           <Route path='/Videopage1' element={<Videopage1/>}/>
           <Route path='/Dash' element={<Dash/>}/>
           <Route path='/Videopage2' element={<Videopage2/>}/>

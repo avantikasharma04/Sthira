@@ -1,4 +1,6 @@
 import React from 'react';
+import im3 from '../Blogno3/im3.jpeg'
+import im4 from '../Blogno3/im4.jpeg'
 
 const Article3 = () => {
   return (
@@ -30,7 +32,7 @@ const Article3 = () => {
       </section>
 
       <div className="my-8">
-        <img src="your-image-url-here.jpg" alt="AI and Mental Health Apps" className="rounded-lg shadow-lg mx-auto" />
+        <img src={im3} alt="AI and Mental Health Apps" className="rounded-lg shadow-lg mx-auto w-96 h-96" />
       </div>
       {/* Section 2: Mental Health Apps */}
       <section className="mb-12">
@@ -86,7 +88,7 @@ const Article3 = () => {
 
       {/* Add Image Option */}
       <div className="my-8">
-        <img src="your-image-url-here.jpg" alt="AI and Mental Health Apps" className="rounded-lg shadow-lg mx-auto" />
+        <img src={im4} alt="AI and Mental Health Apps" className="rounded-lg shadow-lg mx-auto w-96 h-96" />
       </div>
     </div>
   );

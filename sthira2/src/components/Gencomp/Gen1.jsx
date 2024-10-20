@@ -326,10 +326,10 @@ const Gen1 = () => {
                             onChange={handleInputChange}
                             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
                         > <option value="">Select your option</option>
-                        <option value="Single">Single</option>
-                        <option value="Married">Married</option>
-                        <option value="In a realtionship">In a realtionship</option>
-                        <option value="Divorced">Divorced</option>
+                        <option value="Single">Straight</option>
+                        <option value="Married">Gay/Lesbian</option>
+                        <option value="In a realtionship">Asexual</option>
+                        <option value="Divorced">BiSexual</option>
                         <option value="Choose not to reveal">Choose not to reveal</option>
                         </select>
                     </div>

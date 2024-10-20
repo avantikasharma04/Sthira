@@ -1,7 +1,8 @@
 import React from 'react';
-import relax from '../Blogno1/relax.jpeg'
+import image from '../Blogno2/image.jpeg'
+import image2 from '../Blogno2/image2.jpeg'
 
-const B1 = () => {
+const Article2 = () => {
   return (
     <div className="p-8 bg-gray-100 min-h-screen pt-20">
       {/* Header */}
@@ -15,7 +16,7 @@ const B1 = () => {
         <p className="text-gray-600">
         Mental health disorders affect millions of people around the world, influencing their ability to function in everyday life. Whether it's a fleeting period of stress or a long-term challenge, understanding mental health conditions, recognizing early signs, and seeking timely treatment can significantly improve the quality of life for those affected. In this blog, we’ll explore four common mental health disorders: Depression, Anxiety Disorders, Bipolar Disorder, and Post-Traumatic Stress Disorder (PTSD), alongside their symptoms and treatment options. </p></section>
         <div className="my-8">
-        <img src={relax} alt="Self-care" className="rounded-lg shadow-lg mx-auto w-96 h-96" />
+        <img src={image2} alt="Self-care" className="rounded-lg shadow-lg mx-auto w-96 h-96" />
       </div>
       {/* What is Self-Care */}
       <section className="mb-12">
@@ -87,7 +88,7 @@ Remember, mental health is just as important as physical health, and recognizing
 
       {/* Add Image Option */}
       <div className="my-8">
-        <img src={relax} alt="Self-care" className="rounded-lg shadow-lg mx-auto w-96 h-96" />
+        <img src={image} alt="Self-care" className="rounded-lg shadow-lg mx-auto w-96 h-96" />
       </div>
 
       <section className="mb-12">
@@ -98,4 +99,4 @@ Remember, mental health is just as important as physical health, and recognizing
   );
 };
 
-export default B1;
+export default Article2;
