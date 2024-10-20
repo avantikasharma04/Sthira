@@ -15,9 +15,10 @@ model User {
   password     String
   anxietyForms AnxietyForm[]
   depForms DepForm[]
-  profiles Profile[]
+  
   hopelessnesss Hopelessness[]
   bodyimageforms bodyImageForm[]
+  auditforms AuditForm[]
 }
 
 
@@ -30,16 +31,7 @@ model DepForm {
   createdAt DateTime @default(now())
 }
 
-model Profile {
-  id                 Int    @id @default(autoincrement())
-  userId             Int    @unique
-  nationality        String
-  gender             String
-  ageGroup           String
-  orientation        String
-  relationshipStatus String
-  user               User   @relation(fields: [userId], references: [id])
-}
+
 
 model AnxietyForm {
   id        Int      @id @default(autoincrement())
@@ -66,4 +58,13 @@ model bodyImageForm {
   score        Int
   satisfaction String
   createdAt    DateTime @default(now())
+}
+
+model AuditForm {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  score     Int
+  risk      String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
 }

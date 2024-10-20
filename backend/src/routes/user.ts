@@ -83,32 +83,7 @@ try {
 }
 })
 
-userRouter.post('/profile', async (c) => {
-    const jwtPayload = await verifyToken(c);
-    if (!jwtPayload) return; // Exit if the token is invalid or missing
 
-    const body = await c.req.json();
-    const prisma = new PrismaClient({ datasourceUrl: c.env.DATABASE_URL }).$extends(withAccelerate());
-
-    try {
-        const profile = await prisma.profile.create({
-            data: {
-                userId: jwtPayload.id,
-                nationality: body.nationality,
-                gender: body.gender,
-                ageGroup: body.ageGroup,
-                orientation: body.orientation,
-                relationshipStatus: body.relationshipStatus,
-            },
-        });
-        return c.json(profile);
-    } catch (error) {
-        c.status(500);
-        return c.text('Profile creation failed');
-    } finally {
-        await prisma.$disconnect();
-    }
-});
 userRouter.post('/anxiety', async (c) => {
     const jwtPayload = await verifyToken(c);  // Verify JWT token
     if (!jwtPayload) return;
@@ -202,6 +177,32 @@ userRouter.post('/bodyimage', async (c) => {
     } catch (error) {
         c.status(500);
         return c.text('Body image satisfaction form submission failed');
+    } finally {
+        await prisma.$disconnect();
+    }
+});
+
+userRouter.post('/audit', async (c) => {
+    const jwtPayload = await verifyToken(c);  // Verify JWT token
+    if (!jwtPayload) return;
+
+    const body = await c.req.json();
+    const prisma = new PrismaClient({ datasourceUrl: c.env.DATABASE_URL }).$extends(withAccelerate());
+
+    try {
+        // Store form data in the AuditForm table
+        const auditForm = await prisma.auditForm.create({
+            data: {
+                userId: jwtPayload.id,
+                score: body.score,
+                risk: body.risk,
+            },
+        });
+
+        return c.json(auditForm);
+    } catch (error) {
+        c.status(500);
+        return c.text('AUDIT form submission failed');
     } finally {
         await prisma.$disconnect();
     }
